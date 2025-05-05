@@ -7,7 +7,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   onChange,
 }) => {
   return (
-    <div className="relative flex-1 m-2">
+    <div className="relative flex-1 my-2">
       {label && <label className="text-sm text-black">{label}</label>}
       <select
         className="h-12 w-full px-4 text-sm rounded-lg border border-gray-300 appearance-none pr-12 text-black"

@@ -2,67 +2,23 @@
   "menu": [
     {
       "name": "Home",
-      "subMenu": [
-        {
-          "name": "Sub Home 1",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub Home 2",
-          "type": "submenu"
-        }
-      ],
-      "type": "main"
+      "type": "main",
+      "link": "/"
     },
     {
       "name": "Listings",
-      "subMenu": [
-        {
-          "name": "Sub Listing 1",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub Listing 2",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub Listing 3",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub Listing 4",
-          "type": "submenu"
-        }
-      ],
-      "type": "main"
+      "type": "main",
+      "link": "/listings"
     },
     {
       "name": "Contact",
-      "subMenu": [
-        {
-          "name": "Sub Contact 1",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub Contact 2",
-          "type": "submenu"
-        }
-      ],
-      "type": "main"
+      "type": "main",
+      "link": "/contact"
     },
     {
       "name": "About",
-      "subMenu": [
-        {
-          "name": "Sub About 1",
-          "type": "submenu"
-        },
-        {
-          "name": "Sub About 2",
-          "type": "submenu"
-        }
-      ],
-      "type": "main"
+      "type": "main",
+      "link": "/about"
     }
   ]
 }

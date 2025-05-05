@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const CarCard: React.FC<CarCardProps> = ({
@@ -51,21 +52,26 @@ const CarCard: React.FC<CarCardProps> = ({
 
         <div className="mt-4 flex justify-between items-center">
           <span className="text-xl font-bold">{price}</span>
-          <button className="text-blue-500 text-sm font-medium flex items-center gap-2 cursor-pointer">
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 14 15"
-              fill="none"
-            >
-              <path
-                d="M13.6107 0.61499H5.05509C4.84013 0.61499 4.66619 0.788933 4.66619 1.00389C4.66619 1.21885 4.84013 1.39279 5.05509 1.39279H12.6719L0.113453 13.9512C-0.0384687 14.1031 -0.0384687 14.3492 0.113453 14.5011C0.189396 14.577 0.288927 14.615 0.388422 14.615C0.487917 14.615 0.587412 14.577 0.663391 14.5011L13.2218 1.94269V9.55946C13.2218 9.77442 13.3957 9.94836 13.6107 9.94836C13.8257 9.94836 13.9996 9.77442 13.9996 9.55946V1.00389C13.9996 0.788933 13.8256 0.61499 13.6107 0.61499Z"
-                fill="#405FF2"
-              />
-            </svg>
-          </button>
+          <Link
+            href={`/listings/${name.toLowerCase().replace(/ /g, '-')}`}
+            passHref
+          >
+            <button className="text-blue-500 text-sm font-medium flex items-center gap-2 cursor-pointer">
+              View Details
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 14 15"
+                fill="none"
+              >
+                <path
+                  d="M13.6107 0.61499H5.05509C4.84013 0.61499 4.66619 0.788933 4.66619 1.00389C4.66619 1.21885 4.84013 1.39279 5.05509 1.39279H12.6719L0.113453 13.9512C-0.0384687 14.1031 -0.0384687 14.3492 0.113453 14.5011C0.189396 14.577 0.288927 14.615 0.388422 14.615C0.487917 14.615 0.587412 14.577 0.663391 14.5011L13.2218 1.94269V9.55946C13.2218 9.77442 13.3957 9.94836 13.6107 9.94836C13.8257 9.94836 13.9996 9.77442 13.9996 9.55946V1.00389C13.9996 0.788933 13.8256 0.61499 13.6107 0.61499Z"
+                  fill="#405FF2"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
