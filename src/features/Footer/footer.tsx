@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-12 ">
           <FooterSection
             title="Company"
             links={[

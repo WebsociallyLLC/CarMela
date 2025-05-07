@@ -13,7 +13,7 @@ const CarCard: React.FC<CarCardProps> = ({
       <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
       <div className="p-4">
         <div className="flex justify-between items-center absolute top-3 left-0 px-4 w-full">
-          <span className="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full h-9 flex items-center">
+          <span className="bg-[#3D923A] text-white text-xs font-semibold px-3 py-1 rounded-full h-9 flex items-center">
             Great Price
           </span>
           <button

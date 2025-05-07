@@ -5,12 +5,13 @@ const Dropdown: React.FC<DropdownProps> = ({
   options,
   selected,
   onChange,
+  className = '',
 }) => {
   return (
     <div className="relative flex-1 my-2">
       {label && <label className="text-sm text-black">{label}</label>}
       <select
-        className="h-12 w-full px-4 text-sm rounded-lg border border-gray-300 appearance-none pr-12 text-black"
+        className={`h-12 w-full text-sm rounded-lg border border-gray-300 appearance-none pl-2 text-black ${className}`}
         value={selected}
         onChange={(e) => onChange(e.target.value)}
       >

@@ -3,4 +3,5 @@ interface DropdownProps {
   options: string[];
   selected: string;
   onChange: (value: string) => void;
+  className?: string;
 }

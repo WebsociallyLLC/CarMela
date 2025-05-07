@@ -97,9 +97,9 @@ const TestimonialSlider: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-100 px-6">
+    <div className="bg-gray-100 px-6 py-20">
       <div className="max-w-screen-xl mx-auto py-12">
-        <div className="text-center mb-6 md:flex justify-between">
+        <div className="text-center mb-6 md:flex justify-between px-6">
           <h2 className="text-3xl font-bold text-gray-800">
             What Our Customers Say
           </h2>

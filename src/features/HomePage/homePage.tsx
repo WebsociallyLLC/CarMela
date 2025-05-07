@@ -6,12 +6,13 @@ import WhyChooseUs from '../WhyChooseUs';
 import TestimonialSlider from '../TestimonialSlider';
 import VideoSection from '../VideoSection';
 import AutoLoanCalculator from '../AutoLoanCalculator';
+import Navbar from '@/components/Navbar';
 
 const homePage = () => {
   return (
     <>
       <HeroSection />
-      <BodyStyleSelector />
+      {/* <BodyStyleSelector /> */}
       <CarListing />
       <WhyChooseUs />
       <TestimonialSlider />
