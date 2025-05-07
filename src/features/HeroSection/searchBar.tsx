@@ -4,18 +4,30 @@ import Dropdown from '@/components/Inputs/Dropdown';
 const SearchBar: React.FC = () => {
   const [make, setMake] = useState('Makes');
   const [model, setModel] = useState('Models');
+  const [price, setPrice] = useState('price');
 
   const makesOptions = ['Makes', 'Make 1', 'Make 2'];
   const modelsOptions = ['Models', 'Model 1', 'Model 2'];
+  const priceOptions = [
+    'price',
+    'Under $100',
+    'Under $200',
+    'Under $300',
+    'Under $400',
+    'Under $500',
+    'Under $600',
+    '$600 Above',
+  ];
 
   return (
-    <div className="md:h-20 w-[90%] py-2 flex flex-wrap bg-white rounded-2xl shadow-lg items-center justify-between p-4 md:space-x-4">
+    <div className="md:h-20 w-full py-2 flex flex-wrap bg-white rounded-2xl shadow-lg items-center justify-between p-4 md:space-x-4 mx-auto">
       <Dropdown options={makesOptions} selected={make} onChange={setMake} />
       <Dropdown options={modelsOptions} selected={model} onChange={setModel} />
-      <div className="flex-1">
-        <span className="text-sm text-gray-600">Prices:</span>
-        <span className="text-sm text-gray-600"> All</span>
-      </div>
+
+      <Dropdown options={priceOptions} selected={price} onChange={setPrice} />
+
+      <div className="flex-1"></div>
+
       <div>
         <button className="h-12 px-6 bg-blue-500 rounded-full md:rounded-2xl text-white text-sm flex items-center space-x-2 hover:bg-blue-700 cursor-pointer transition">
           <svg

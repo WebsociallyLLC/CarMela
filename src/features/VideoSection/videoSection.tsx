@@ -81,7 +81,7 @@ const VideoSection: React.FC = () => {
             </li>
           </ul>
 
-          <button className="flex items-center px-8 py-3 bg-blue-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-blue-500 transition duration-300">
+          <button className="flex items-center px-6 py-4 bg-[#405FF2] text-white font-medium text-[15px] rounded-lg shadow-md hover:bg-blue-500 transition duration-300">
             Get Started{' '}
             <span className="ml-2">
               <svg

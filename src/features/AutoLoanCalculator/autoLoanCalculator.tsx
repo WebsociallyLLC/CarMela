@@ -86,7 +86,7 @@ const AutoLoanCalculator: React.FC = () => {
                     `Your estimated monthly payment is $${calculateMonthlyPayment()}`,
                   )
                 }
-                className="w-full flex justify-center items-center py-3 text-white bg-blue-600 rounded-lg text-lg font-semibold hover:bg-blue-500 transition duration-300"
+                className="w-full flex justify-center items-center py-3 text-white bg-[#405FF2] rounded-lg text-lg font-semibold hover:bg-blue-500 transition duration-300"
               >
                 Calculate{' '}
                 <span className="ml-2">
