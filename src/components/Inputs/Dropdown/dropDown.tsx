@@ -1,17 +1,15 @@
 import React from 'react';
-
 const Dropdown: React.FC<DropdownProps> = ({
   label,
   options,
   selected,
   onChange,
-  className = '',
 }) => {
   return (
     <div className="relative flex-1 my-2">
       {label && <label className="text-sm text-black">{label}</label>}
       <select
-        className={`h-12 w-full text-sm rounded-lg border border-gray-300 appearance-none pl-2 text-black ${className}`}
+        className="h-12 w-full px-4 text-sm rounded-lg border-gray-300 appearance-none pr-12 text-black"
         value={selected}
         onChange={(e) => onChange(e.target.value)}
       >
@@ -40,5 +38,4 @@ const Dropdown: React.FC<DropdownProps> = ({
     </div>
   );
 };
-
 export default Dropdown;

@@ -1,33 +1,31 @@
 import FooterSection from '@/components/FooterSection';
 import SocialIcons from '@/components/SocialIcons';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-[#050B20] text-white py-16 px-6">
-      <div className="max-w-screen-xl mx-auto space-y-10">
-        <div className="flex flex-col items-center justify-between sm:flex-row sm:space-x-8">
-          <div className="text-center sm:text-left">
-            <h2 className="text-3xl font-bold">FASTCARDEALS</h2>
-            <p className="text-lg mt-2">
-              Receive pricing updates, shopping tips & more!
-            </p>
+    <div className="bg-[#050B20] text-white py-12 min-h-[300px] px-8">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-44 px-6 md:px-10 mt-4 md:mt-14 mb-0 md:mb-16">
+          <div className="flex md:w-[150%] w-full md:px-0 px-6 flex-col md:mb-10 mb-6 items-center justify-between sm:flex-row sm:space-x-8">
+            <div className="text-center sm:text-left">
+              <div className="-mt-14">
+                <Image
+                  src="/assets/motors-logo.svg"
+                  alt="FastCarDeals Logo"
+                  width={250}
+                  height={58}
+                  quality={100}
+                  priority
+                />
+              </div>
+              <p className="text-lg mt-2 font-[400] w-full">
+                Receive pricing updates, shopping tips & more!
+              </p>
+            </div>
           </div>
-
-          <div className="mt-6 sm:mt-0 sm:flex items-center relative  rounded-full w-[300px] md:w-[400px]">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="py-2 text-white bg-[#252B3D] w-full md:h-14 focus:outline-none rounded-full pl-4"
-            />
-            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 py-2 px-6 bg-blue-600 rounded-full hover:bg-blue-500 transition duration-300">
-              Sign Up
-            </button>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-12 ">
           <FooterSection
             title="Company"
             links={[
@@ -43,45 +41,19 @@ const Footer: React.FC = () => {
             title="Quick Links"
             links={['Get in Touch', 'Help center', 'Live chat', 'How it works']}
           />
-          <FooterSection
-            title="Our Brands"
-            links={[
-              'Toyota',
-              'Porsche',
-              'Audi',
-              'BMW',
-              'Ford',
-              'Nissan',
-              'Peugeot',
-              'Volkswagen',
-            ]}
-          />
-          <FooterSection
-            title="Vehicles Type"
-            links={[
-              'Sedan',
-              'Hatchback',
-              'SUV',
-              'Hybrid',
-              'Electric',
-              'Coupe',
-              'Truck',
-              'Convertible',
-            ]}
-          />
-          <div>
+          <div className="mb-4 md:mb-0">
             <h3 className="font-bold text-lg mb-4">Connect With Us</h3>
             <SocialIcons />
           </div>
         </div>
-
-        <div className="md:flex justify-between mt-10 text-sm">
+        <hr className="border-t border-[#374677]" />
+        <div className="flex md:flex-row flex-col md:px-10 px-6 justify-between mt-6 text-sm">
           <p>© 2025 template.com. All rights reserved.</p>
           <div className="space-x-4">
-            <Link href="#" className="text-blue-400 hover:underline">
+            <Link href="#" className="text-white hover:underline">
               Terms & Conditions
             </Link>
-            <Link href="#" className="text-blue-400 hover:underline">
+            <Link href="#" className="text-white hover:underline">
               Privacy Notice
             </Link>
           </div>
