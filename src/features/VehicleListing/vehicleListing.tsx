@@ -3,6 +3,7 @@ import CarCard from '@/components/CarCard';
 import Dropdown from '@/components/Inputs/Dropdown';
 import React, { useState } from 'react';
 import { carData } from './constant';
+import Navbar from '@/components/Navbar';
 
 const VehicleListing = () => {
   const [sortBy, SetSortBy] = useState('All');
