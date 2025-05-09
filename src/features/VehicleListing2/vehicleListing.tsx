@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { carData } from './constant';
 import ListHeroSection from '../ListHeroSection/listHeroSection';
 import CarCard from '@/components/CarCard2';
+import SearchBar from '../HeroSection/searchBar2';
 
 const VehicleListing = () => {
   const [sortBy, SetSortBy] = useState('All');
@@ -15,7 +16,13 @@ const VehicleListing = () => {
 
   return (
     <>
-      <ListHeroSection />
+      <ListHeroSection
+        backgroundImage="/assets/list-hero.svg"
+        image="/assets/icons.svg"
+        className="bg-cover bg-center"
+      >
+        <SearchBar />
+      </ListHeroSection>
       <div className="py-14 px-6 max-w-screen-xl mx-auto">
         <div>
           <p>
