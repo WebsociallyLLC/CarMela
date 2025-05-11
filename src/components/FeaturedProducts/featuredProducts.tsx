@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-
 const products = [
   {
     image: '/assets/featured-product.svg',
@@ -27,9 +26,7 @@ const products = [
     price: '$40,000',
     link: '#',
   },
-  // ...add more products
 ];
-
 function Arrow({
   className,
   style,
@@ -54,17 +51,15 @@ function Arrow({
     </button>
   );
 }
-
 const FeaturedProducts = () => {
   const sliderRef = React.useRef<Slider | null>(null);
-
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: false, // We'll use custom arrows below
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -80,9 +75,8 @@ const FeaturedProducts = () => {
       },
     ],
   };
-
   return (
-    <section className="bg-[#F4F4F4] md:py-24 py-12">
+    <section className="bg-[#F4F4F4] md:py-24 py-12 md:px-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h2 className="md:text-2xl text-[18px] font-bold text-[#181C23]">
@@ -109,7 +103,7 @@ const FeaturedProducts = () => {
         </div>
         <Slider ref={sliderRef} {...settings} className="mb-8">
           {products.map((product, idx) => (
-            <div key={idx} className="px-2">
+            <div key={idx} className="md:px-2 px-0">
               <div className="flex flex-col md:flex-row bg-white rounded-2xl border border-[#E6E6E6] shadow-md overflow-hidden h-auto md:h-[240px]">
                 <img
                   src={product.image}
@@ -151,7 +145,6 @@ const FeaturedProducts = () => {
                       {product.transmission}
                     </span>
                   </div>
-
                   <div className="flex justify-between items-center mt-4">
                     <span className="text-lg font-bold text-[#181C23]">
                       {product.price}
@@ -168,7 +161,6 @@ const FeaturedProducts = () => {
             </div>
           ))}
         </Slider>
-        {/* Custom Arrows below, left-aligned */}
         <div className="flex items-center mt-2">
           <Arrow
             onClick={() => sliderRef.current?.slickPrev()}
@@ -183,5 +175,4 @@ const FeaturedProducts = () => {
     </section>
   );
 };
-
 export default FeaturedProducts;

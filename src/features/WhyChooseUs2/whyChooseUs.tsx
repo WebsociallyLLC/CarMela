@@ -47,8 +47,8 @@ const WhyChooseUs: React.FC = () => {
         <source src="/assets/whychoosus.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="relative z-10 bg-black/70 py-20">
-        <div className="text-center text-white px-6 max-w-screen-xl mx-auto">
+      <div className="relative z-10 bg-black/70 py-20 md:px-20 px-6">
+        <div className="text-center text-white max-w-screen-xl mx-auto">
           <h2 className="text-[40px] font-bold mb-6">Why Choose Us?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {features.map((feature) => (

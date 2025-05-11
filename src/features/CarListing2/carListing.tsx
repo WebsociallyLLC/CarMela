@@ -2,7 +2,6 @@
 import CarCard from '@/components/CarCard2';
 import Link from 'next/link';
 import React, { useState } from 'react';
-
 const carData = [
   {
     id: 1,
@@ -33,13 +32,12 @@ const carData = [
     imageUrl: '/assets/cardPic.svg',
   },
 ];
-
 const CarListing: React.FC = () => {
   const handleSelect = () => {
     console.log('Car selected!');
   };
   return (
-    <div className="py-12 px-6 bg-[#EFEFEF]">
+    <div className="py-12 md:px-[75px] px-6 bg-[#EFEFEF]">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex justify-between pb-3">
           <span className="text-2xl">Recently Added</span>
@@ -62,7 +60,6 @@ const CarListing: React.FC = () => {
             </svg>
           </Link>
         </div>
-
         {/* Car Listings Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {carData.map((car) => (
@@ -80,5 +77,4 @@ const CarListing: React.FC = () => {
     </div>
   );
 };
-
 export default CarListing;

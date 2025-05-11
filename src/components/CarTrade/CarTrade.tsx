@@ -14,10 +14,10 @@ const feature = [
 const CarTrade: React.FC = () => {
   return (
     <section
-      className={`${figtree.className} bg-black text-white py-12 px-8 md:px-16`}
+      className={`${figtree.className} bg-black text-white py-12 px-8 md:px-20`}
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between md:gap-16">
-        <div className="relative md:w-[50%] w-full md:h-auto">
+      <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row items-center md:justify-between md:gap-16">
+        <div className="relative md:w-[60%] w-full md:h-auto">
           <video
             className="w-full h-[400px] object-cover rounded-md"
             autoPlay
@@ -29,7 +29,7 @@ const CarTrade: React.FC = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="md:w-[50%] w-full space-y-6 mt-6 md:mt-0">
+        <div className="md:w-[40%] w-full space-y-6 mt-6 md:mt-0">
           <h2 className="text-[32px] sm:text-4xl font-bold leading-tight">
             Get A Fair Price For Your Car <br className="hidden sm:block" />
             Sell To Us Today

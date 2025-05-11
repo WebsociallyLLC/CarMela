@@ -1,11 +1,9 @@
 'use client';
 import React from 'react';
 import Slider from 'react-slick';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import TestimonialCard from '@/components/TestimonialCard';
-
 const testimonials = [
   {
     id: 1,
@@ -32,7 +30,6 @@ const testimonials = [
     imageUrl: '/assets/team.svg',
   },
 ];
-
 const TestimonialSlider: React.FC = () => {
   const settings = {
     dots: true,
@@ -95,9 +92,8 @@ const TestimonialSlider: React.FC = () => {
       </div>
     ),
   };
-
   return (
-    <div className="bg-gray-100 px-6 py-20">
+    <div className="bg-gray-100 md:px-16 px-6 md:py-20 py-6">
       <div className="max-w-screen-xl mx-auto py-12">
         <div className="text-center mb-6 md:flex justify-between px-6">
           <h2 className="text-3xl font-bold text-gray-800">
@@ -108,7 +104,6 @@ const TestimonialSlider: React.FC = () => {
             reviews
           </p>
         </div>
-
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={testimonial.id}>
@@ -125,5 +120,4 @@ const TestimonialSlider: React.FC = () => {
     </div>
   );
 };
-
 export default TestimonialSlider;

@@ -106,7 +106,7 @@ const ContactUs = () => {
                     />
                     <button
                       type="submit"
-                      className="bg-[#405FF2] text-white text-[14px] w-[180px] px-2 py-4 rounded-[14px] mt-4 ml-0"
+                      className="bg-red-500 text-white text-[14px] w-[180px] px-2 py-4 rounded-[14px] mt-4 ml-0"
                     >
                       Send Message
                     </button>
