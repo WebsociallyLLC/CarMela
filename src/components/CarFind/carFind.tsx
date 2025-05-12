@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 const CarFind: React.FC = () => {
   return (
     <section
-      className={`${dmSans.className} relative w-full h-[80vh] md:h-[70vh] flex items-center justify-center min-w-full max-w-screen-xl mx-auto bg-black`}
+      className={`${dmSans.className} relative w-full h-[80vh] flex items-center bg-black`}
     >
       <div className="absolute inset-0 z-0">
         <Image
@@ -19,17 +19,23 @@ const CarFind: React.FC = () => {
           fill
           quality={100}
           priority
-          className="w-full h-full object-contain"
+          className="object-cover w-full h-full"
         />
       </div>
-      <div className="absolute inset-0 bg-black/20 z-10" />
-      <div className="relative z-20 px-4 text-white w-full text-start max-w-2xl md:-ms-[470px]">
-        <h1 className="md:text-[60px] text-[50px] sm:text-4xl md:text-5xl font-[500] leading-tight">
-          We Make Finding The <br /> Right Car Simple
-        </h1>
-        <button className="mt-6 px-8 py-4 bg-black/70 border border-white text-white font-medium rounded-[12px] transition">
-          Find Out More &rarr;
-        </button>
+
+      <div className="absolute inset-0 bg-black/50 z-10" />
+
+      <div className="relative z-20 w-full max-w-screen-xl mx-auto px-6 sm:px-10 flex justify-start">
+        <div className="text-white min-w-[880px] max-w-[420px]">
+          <h1 className="md:text-3xl text-[20px] sm:text-4xl font-bold leading-snug mb-6">
+            We Make Finding <br />
+            The Right Car Simple
+          </h1>
+          <button className="inline-flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+            Find Out More
+            <span className="text-xl">↗</span>
+          </button>
+        </div>
       </div>
     </section>
   );

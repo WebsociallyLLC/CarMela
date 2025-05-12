@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
         alt="Highway"
         className="absolute inset-0 w-full h-full mt-16 pr-14 object-contain opacity-80 z-10 pointer-events-none"
       />
-      <div className="w-full max-w-[1200px] mx-auto h-full relative z-20 flex flex-col items-center justify-center px-4 text-white text-center">
+      <div className="w-full max-w-[1200px] mx-auto h-full relative z-20 flex flex-col items-center justify-center text-white text-center">
         <p
           className={`${figtree.className} text-[16px] md:text-[18px] px-4 md:px-0 font-[400] md:mb-8 mb-4 -mt-32 lg:-mt-0`}
         >

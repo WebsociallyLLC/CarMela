@@ -3,15 +3,14 @@ import SocialIcons from '@/components/SocialIcons';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
 const Footer: React.FC = () => {
   return (
-    <div className="bg-[#050B20] text-white py-12 min-h-[300px] px-8">
+    <div className="bg-[#050B20] text-white py-12 min-h-[300px] md:px-0 ">
       <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-44 px-6 md:px-10 mt-4 md:mt-14 mb-0 md:mb-16">
-          <div className="flex md:w-[150%] w-full md:px-0 px-6 flex-col md:mb-10 mb-6 items-center justify-between sm:flex-row sm:space-x-8">
-            <div className="text-center sm:text-left">
-              <div className="-mt-14">
+        <div className="grid grid-cols-1 text-start sm:grid-cols-12 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-44 px-8 md:px-4 mt-4 md:mt-14 mb-0 md:mb-16">
+          <div className="flex md:w-[150%] w-full md:px-0 px-8 flex-col md:mb-10 mb-6 items-start justify-between sm:flex-row">
+            <div className="sm:text-left">
+              <div className="-ms-14 md:-ms-0">
                 <Image
                   src="/assets/motors-logo.svg"
                   alt="FastCarDeals Logo"
@@ -21,7 +20,7 @@ const Footer: React.FC = () => {
                   priority
                 />
               </div>
-              <p className="text-lg mt-2 font-[400] w-full">
+              <p className="text-lg mt-2 md:ps-4 -ms-10 md:-ms-0 font-[400] w-full">
                 Receive pricing updates, shopping tips & more!
               </p>
             </div>
@@ -47,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <hr className="border-t border-[#374677]" />
-        <div className="flex md:flex-row flex-col md:px-10 px-6 justify-between mt-6 text-sm">
+        <div className="flex md:flex-row px-4 flex-col md:px-10 justify-between mt-6 text-sm">
           <p>© 2025 template.com. All rights reserved.</p>
           <div className="space-x-4">
             <Link href="#" className="text-white hover:underline">
@@ -62,5 +61,4 @@ const Footer: React.FC = () => {
     </div>
   );
 };
-
 export default Footer;
