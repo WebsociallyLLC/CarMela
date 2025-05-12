@@ -19,6 +19,11 @@
       "name": "About",
       "type": "main",
       "link": "/about"
+    },
+    {
+      "name": "Credit",
+      "type": "main",
+      "link": "/credit"
     }
   ]
 }
