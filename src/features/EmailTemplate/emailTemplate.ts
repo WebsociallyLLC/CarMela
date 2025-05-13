@@ -202,10 +202,7 @@ export function FinanceEmailTemplate(data: FinanceFormData): string {
         <div class="email-container">
           <div class="email-content">
             <div class="email-header">
-              <img
-                src="https://imagescdn.dealercarsearch.com/DealerImages/15765/25249/logo.png"
-                alt="MTZ Auto Sales Logo"
-              />
+
               <h1 style="color: #0A4B8F; margin-top: 20px;">New Finance Application</h1>
             </div>
 
@@ -236,7 +233,7 @@ export function FinanceEmailTemplate(data: FinanceFormData): string {
 
             <div class="email-footer">
               <p>This application was submitted with acknowledgment and consent to the terms and conditions.</p>
-              <p style="margin-top: 10px;">© MTZ Auto Sales LLC</p>
+              <p style="margin-top: 10px;">© TakeOff Motors</p>
             </div>
           </div>
         </div>

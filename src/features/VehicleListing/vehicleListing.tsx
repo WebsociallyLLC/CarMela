@@ -2,8 +2,7 @@
 import CarCard from '@/components/CarCard';
 import Dropdown from '@/components/Inputs/Dropdown';
 import React, { useState } from 'react';
-import { carData } from './constant';
-import Navbar from '@/components/Navbar';
+import { CARS_DATA } from '@/utils/data';
 
 const VehicleListing = () => {
   const [sortBy, SetSortBy] = useState('All');
@@ -39,7 +38,7 @@ const VehicleListing = () => {
           </span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {carData.map((car) => (
+          {CARS_DATA.map((car: any) => (
             <CarCard
               key={car.id}
               imageUrl={car.imageUrl}

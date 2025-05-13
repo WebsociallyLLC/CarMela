@@ -1,5 +1,5 @@
 export const contactData = {
-  address: '123 Queensberry Street, North Melbourne VIC3051, Australia.',
-  email: 'ali@boxcars.com',
-  phone: '+76 956 123 456',
+  address: '3950 227th Ave NW SAINT FRANCIS MN 55070',
+  email: 'takeoffmotorcars@gmail.com',
+  phone: '(763) 442-2767',
 };

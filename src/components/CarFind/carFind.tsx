@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { DM_Sans } from 'next/font/google';
+import Link from 'next/link';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -25,16 +26,21 @@ const CarFind: React.FC = () => {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="relative z-20 w-full max-w-screen-xl mx-auto px-6 sm:px-10 flex justify-start">
-        <div className="text-white min-w-[880px] max-w-[420px]">
-          <h1 className="md:text-3xl text-[20px] sm:text-4xl font-bold leading-snug mb-6">
-            We Make Finding <br />
-            The Right Car Simple
+      <div className="relative z-20 max-w-[1440px] w-full px-6 sm:px-10 mx-auto">
+        <div className="text-white max-w-xl">
+          <h1 className="md:text-5xl text-[28px] sm:text-4xl font-bold leading-tight mb-6 text-left">
+            We Make Finding
+            <br />
+            The Right Car very Simple
           </h1>
-          <button className="inline-flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">
-            Find Out More
-            <span className="text-xl">↗</span>
-          </button>
+          <div className="text-left">
+            <Link href="/listings">
+              <button className="inline-flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+                See Our Inventory
+                <span className="text-xl">↗</span>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

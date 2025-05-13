@@ -10,6 +10,7 @@ import React from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import FinanceEmailTemplate from '@/features/EmailTemplate';
 import { Input } from '@/components/UI/input';
+import { toast } from 'sonner';
 
 const states = [
   'AL',
@@ -74,7 +75,9 @@ const SelectInput = ({
   <div>
     <select
       {...props}
-      className={`mt-1 block w-full rounded-md border-2 ${error ? 'border-red-400' : 'border-[#ced4da]'} text-[20px] font-[400] py-3 text-black shadow-sm focus:border-blue-500 focus:ring-blue-500`}
+      className={`mt-1 block w-full rounded-md border-2 ${
+        error ? 'border-red-400' : 'border-gray-200'
+      } text-base font-medium py-3 text-gray-800 shadow-sm focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 transition-all duration-200`}
     />
     <ErrorMessage message={error} />
   </div>
@@ -189,17 +192,14 @@ export function FinanceForm() {
     setLoading(true);
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL ||
-          'https://stag.api.carzoomo.com/socially/send-email',
+        'https://stag.api.carzoomo.com/socially/send-email',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            email:
-              process.env.NEXT_PUBLIC_CLIENT_EMAIL ||
-              'proabdulbasit.me@gmail.com',
+            email: 'tt.talhatariq1@gmail.com',
             subject: `New Finance Application from ${data.applicant.firstName} ${data.applicant.lastName}`,
             html: FinanceEmailTemplate(data),
           }),
@@ -210,10 +210,10 @@ export function FinanceForm() {
         throw new Error('Failed to send application');
       }
 
-      alert('Application submitted successfully!');
+      toast.success('Application submitted successfully!');
     } catch (error) {
       console.error('Error submitting application:', error);
-      alert('Failed to submit application. Please try again.');
+      toast.error('Failed to submit application. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -227,9 +227,9 @@ export function FinanceForm() {
     className?: string;
   }) => (
     <label
-      className={`block text-base font-semibold text-gray-700 ${className}`}
+      className={`block text-sm font-semibold text-gray-800 mb-1 ${className}`}
     >
-      {children} <span className="text-red-500">*</span>
+      {children} <span className="text-[#FF0000]">*</span>
     </label>
   );
 
@@ -241,32 +241,32 @@ export function FinanceForm() {
     className?: string;
   }) => (
     <label
-      className={`block text-base font-semibold text-gray-700 ${className}`}
+      className={`block text-sm font-semibold text-gray-800 mb-1 ${className}`}
     >
       {children}
     </label>
   );
 
   const renderPersonInfo = (prefix: 'applicant' | 'cobuyer', title: string) => (
-    <div className="space-y-6">
-      <h2 className="text-[20px] md:text-[28px] font-bold border-b pb-2">
+    <div className="space-y-5">
+      <h2 className="text-xl md:text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2">
         {title}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div>
           <RequiredLabel>First Name:</RequiredLabel>
           <Input
             {...register(`${prefix}.firstName` as any)}
             error={(errors[prefix] as any)?.firstName?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
           <OptionalLabel>Middle Name:</OptionalLabel>
           <Input
             {...register(`${prefix}.middleName` as any)}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
@@ -274,36 +274,36 @@ export function FinanceForm() {
           <Input
             {...register(`${prefix}.lastName` as any)}
             error={(errors[prefix] as any)?.lastName?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <RequiredLabel>Address 1:</RequiredLabel>
           <Input
             {...register(`${prefix}.address1` as any)}
             error={(errors[prefix] as any)?.address1?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
           <OptionalLabel>Address 2:</OptionalLabel>
           <Input
             {...register(`${prefix}.address2` as any)}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div>
           <RequiredLabel>City:</RequiredLabel>
           <Input
             {...register(`${prefix}.city` as any)}
             error={(errors[prefix] as any)?.city?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
@@ -311,7 +311,7 @@ export function FinanceForm() {
           <SelectInput
             {...register(`${prefix}.state` as any)}
             error={(errors[prefix] as any)?.state?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
             <option value="">Select State:</option>
             {states.map((state) => (
@@ -326,19 +326,19 @@ export function FinanceForm() {
           <Input
             {...register(`${prefix}.zip` as any)}
             error={(errors[prefix] as any)?.zip?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <RequiredLabel>Social Security Number:</RequiredLabel>
           <Input
             {...register(`${prefix}.ssn` as any)}
             error={(errors[prefix] as any)?.ssn?.message}
             type="number"
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             placeholder="###-##-####"
           />
         </div>
@@ -358,11 +358,11 @@ export function FinanceForm() {
               id={`${prefix}-dateOfBirth`}
               type="date"
               {...register(`${prefix}.dateOfBirth` as any)}
-              className={`pl-2 pr-4 py-6 w-full border-2 rounded-md text-[20px] font-[400] bg-white h-5 ${
+              className={`pl-2 pr-4 py-3 w-full border rounded-md text-base font-medium bg-white ${
                 (errors[prefix] as any)?.dateOfBirth?.message
                   ? 'border-red-400'
-                  : 'border-[#ced4da]'
-              } mt-1`}
+                  : 'border-gray-200'
+              } mt-1 focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 transition-all duration-200`}
               placeholder="mm/dd/yyyy"
             />
             {(errors[prefix] as any)?.dateOfBirth?.message && (
@@ -374,13 +374,13 @@ export function FinanceForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <OptionalLabel>Drivers License Number:</OptionalLabel>
           <Input
             {...register(`${prefix}.driversLicense.number` as any)}
             type="number"
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             placeholder="###-##-####"
           />
         </div>
@@ -388,7 +388,7 @@ export function FinanceForm() {
           <OptionalLabel>Drivers License State:</OptionalLabel>
           <SelectInput
             {...register(`${prefix}.driversLicense.state` as any)}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
             <option value="">Select State:</option>
             {states.map((state) => (
@@ -400,7 +400,7 @@ export function FinanceForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <OptionalLabel>Drivers License Expiration:</OptionalLabel>
           <div className="relative w-full">
@@ -419,11 +419,11 @@ export function FinanceForm() {
               id={`${prefix}-driversLicenseExpiration`}
               type="date"
               {...register(`${prefix}.driversLicense.expiration` as any)}
-              className={`pl-2 pr-4 py-6 w-full border-2 rounded-md text-[20px] font-[400] bg-white h-5 ${
+              className={`pl-2 pr-4 py-3 w-full border rounded-md text-base font-medium bg-white ${
                 (errors[prefix] as any)?.driversLicense?.expiration?.message
                   ? 'border-red-400'
-                  : 'border-[#ced4da]'
-              } mt-1`}
+                  : 'border-gray-200'
+              } mt-1 focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 transition-all duration-200`}
               placeholder="mm/dd/yyyy"
             />
             {(errors[prefix] as any)?.driversLicense?.expiration?.message && (
@@ -439,19 +439,19 @@ export function FinanceForm() {
             {...register(`${prefix}.phone.mobile` as any)}
             type="number"
             error={(errors[prefix] as any)?.phone?.mobile?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             placeholder="###-###-####"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <OptionalLabel>Home Phone:</OptionalLabel>
           <Input
             {...register(`${prefix}.phone.home` as any)}
             type="number"
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             placeholder="###-###-####"
           />
         </div>
@@ -462,21 +462,21 @@ export function FinanceForm() {
             type="email"
             error={(errors[prefix] as any)?.email?.message}
             placeholder="example@example.com"
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-5">
         <h2 className="text-xl font-semibold pb-1 pt-3">Time at Residence</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div>
             <RequiredLabel>Years:</RequiredLabel>
             <SelectInput
               {...register(`${prefix}.residence.years` as any)}
               error={(errors[prefix] as any)?.residence?.years?.message}
-              className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+              className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             >
               <option value="">Select Years</option>
               {yearOptions.map((year) => (
@@ -491,7 +491,7 @@ export function FinanceForm() {
             <SelectInput
               {...register(`${prefix}.residence.months` as any)}
               error={(errors[prefix] as any)?.residence?.months?.message}
-              className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+              className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             >
               <option value="">Select Months</option>
               {monthOptions.map((month) => (
@@ -503,7 +503,7 @@ export function FinanceForm() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div>
             <RequiredLabel>Residence Type</RequiredLabel>
             <SelectInput
@@ -512,7 +512,7 @@ export function FinanceForm() {
                 (errors[prefix] as any)?.residence?.type &&
                 'errors.residence.type'
               }
-              className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+              className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             >
               <option value="">Select Type</option>
               <option value="rent">Rent</option>
@@ -530,7 +530,7 @@ export function FinanceForm() {
               min="0"
               step="0.01"
               error={(errors[prefix] as any)?.residence?.payment?.message}
-              className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+              className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
             />
           </div>
         </div>
@@ -542,34 +542,33 @@ export function FinanceForm() {
     prefix: 'employment' | 'cobuyerEmployment',
     title: string,
   ) => (
-    <div className="space-y-6">
-      <h2 className="text-[20px] md:text-[28px] font-semibold border-b pb-2">
+    <div className="space-y-5">
+      <h2 className="text-xl md:text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2">
         {title}
       </h2>
 
-      {/* Employer (1 row) */}
       <div>
-        <RequiredLabel>Empleadora</RequiredLabel>
+        <RequiredLabel>Employer</RequiredLabel>
         <Input
           {...register(`${prefix}.employer` as any, {
             required: 'Employer is required',
           })}
           error={(errors[prefix] as any)?.employer?.message}
-          className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400] w-full"
+          className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
-          <RequiredLabel>Tipo de empleador</RequiredLabel>
+          <RequiredLabel>Employer Type</RequiredLabel>
           <SelectInput
             {...register(`${prefix}.employerType` as any, {
               required: 'Employer type is required',
             })}
             error={(errors[prefix] as any)?.employerType?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
-            <option value="">Seleccionar tipo</option>
+            <option value="">Select type</option>
             <option value="fullTime">Full-Time</option>
             <option value="partTime">Part-Time</option>
             <option value="temporary">Temporary</option>
@@ -579,7 +578,7 @@ export function FinanceForm() {
           </SelectInput>
         </div>
         <div>
-          <RequiredLabel>Ingreso Mensual</RequiredLabel>
+          <RequiredLabel>Monthly Income</RequiredLabel>
           <Input
             {...register(`${prefix}.monthlyIncome` as any, {
               required: 'Monthly income is required',
@@ -589,63 +588,63 @@ export function FinanceForm() {
             type="number"
             min="0"
             step="0.01"
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
       <div>
-        <RequiredLabel>Ocupación</RequiredLabel>
+        <RequiredLabel>Occupation</RequiredLabel>
         <Input
           {...register(`${prefix}.occupation` as any, {
             required: 'Occupation is required',
           })}
           error={(errors[prefix] as any)?.occupation?.message}
-          className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400] w-full"
+          className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
-          <RequiredLabel>Dirección 1</RequiredLabel>
+          <RequiredLabel>Address 1</RequiredLabel>
           <Input
             {...register(`${prefix}.address1` as any, {
               required: 'Address is required',
             })}
             error={(errors[prefix] as any)?.address1?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
-          <OptionalLabel>Dirección 2</OptionalLabel>
+          <OptionalLabel>Address 2</OptionalLabel>
           <Input
             {...register(`${prefix}.address2` as any)}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div>
-          <RequiredLabel>Ciudad</RequiredLabel>
+          <RequiredLabel>City</RequiredLabel>
           <Input
             {...register(`${prefix}.city` as any, {
               required: 'City is required',
             })}
             error={(errors[prefix] as any)?.city?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
         <div>
-          <RequiredLabel>Estado</RequiredLabel>
+          <RequiredLabel>State</RequiredLabel>
           <SelectInput
             {...register(`${prefix}.state` as any, {
               required: 'State is required',
             })}
             error={(errors[prefix] as any)?.state?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
-            <option value="">Seleccionar estado</option>
+            <option value="">Select state</option>
             {states.map((state) => (
               <option key={state} value={state}>
                 {state}
@@ -654,19 +653,19 @@ export function FinanceForm() {
           </SelectInput>
         </div>
         <div>
-          <RequiredLabel>Código</RequiredLabel>
+          <RequiredLabel>Zip Code</RequiredLabel>
           <Input
             {...register(`${prefix}.zip` as any, {
               required: 'ZIP code is required',
             })}
             error={(errors[prefix] as any)?.zip?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           />
         </div>
       </div>
 
       <div>
-        <RequiredLabel>Teléfono de trabajo:</RequiredLabel>
+        <RequiredLabel>Work Phone</RequiredLabel>
         <Input
           {...register(`${prefix}.workPhone` as any, {
             required: 'Work phone is required',
@@ -674,23 +673,23 @@ export function FinanceForm() {
           type="number"
           error={(errors[prefix] as any)?.workPhone?.message}
           placeholder="###-###-####"
-          className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400] w-full"
+          className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
         />
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold pt-3">Tiempo en el trabajo:</h2>
+        <h2 className="text-xl font-semibold pt-3">Time on Job</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
-          <RequiredLabel>Años</RequiredLabel>
+          <RequiredLabel>Years</RequiredLabel>
           <SelectInput
             {...register(`${prefix}.timeOnJob.years` as any)}
             error={(errors[prefix] as any)?.timeOnJob?.years?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
-            <option value="">Seleccionar años</option>
+            <option value="">Select years</option>
             {yearOptions.map((year) => (
               <option key={year} value={year}>
                 {year}
@@ -699,13 +698,13 @@ export function FinanceForm() {
           </SelectInput>
         </div>
         <div>
-          <RequiredLabel>Meses</RequiredLabel>
+          <RequiredLabel>Months</RequiredLabel>
           <SelectInput
             {...register(`${prefix}.timeOnJob.months` as any)}
             error={(errors[prefix] as any)?.timeOnJob?.months?.message}
-            className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+            className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
           >
-            <option value="">Seleccionar meses</option>
+            <option value="">Select months</option>
             {monthOptions.map((month) => (
               <option key={month} value={month}>
                 {month}
@@ -722,35 +721,35 @@ export function FinanceForm() {
       onSubmit={handleSubmit(onSubmit, (formErrors) => {
         console.log('Validation errors:', formErrors);
       })}
-      className="space-y-8"
+      className="space-y-6 max-w-[1440px] mx-auto"
     >
-      <div className="bg-[#FAFAFA] rounded-lg shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
         {renderPersonInfo('applicant', 'Applicant Information')}
       </div>
 
-      <div className="bg-[#FAFAFA] rounded-lg shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
         {renderEmploymentInfo('employment', 'Applicant Employment Information')}
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-[20px] md:text-[28px] font-bold text-[#181818] border-b border-gray-400 pb-2">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2">
           Do you have a co-buyer?
         </h2>
 
         <button
           type="button"
           onClick={handleCobuyerToggle}
-          className="bg-[#005ea0] text-white py-3 px-4 rounded-md hover:bg-[#003154] focus:outline-none focus:ring-2 focus:ring-[#005ea0] focus:ring-offset-2 text-base font-normal"
+          className="bg-[#FF0000] text-white py-3 px-6 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base font-medium transition-all duration-200"
         >
           {showCobuyer ? 'Remove Co-Buyer' : 'Add Co-Buyer'}
         </button>
 
         {showCobuyer && (
-          <div className="space-y-8 mt-4">
-            <div className="bg-[#FAFAFA] rounded-lg shadow-sm border border-gray-200 p-6">
+          <div className="space-y-6 mt-4">
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
               {renderPersonInfo('cobuyer', 'Co-Buyer Information')}
             </div>
-            <div className="bg-[#FAFAFA] rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
               {renderEmploymentInfo(
                 'cobuyerEmployment',
                 'Co-Buyer Employment Information',
@@ -760,50 +759,50 @@ export function FinanceForm() {
         )}
       </div>
 
-      <div className="rounded-lg shadow-sm border border-gray-200 p-6">
-        <div className="space-y-6">
-          <h2 className="text-[20px] md:text-[28px] font-semibold border-b pb-2">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+        <div className="space-y-5">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Vehicle Information
           </h2>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-4">
             <div>
               <OptionalLabel>Vehicle to Finance</OptionalLabel>
               <Input
                 {...register('vehicle.vehicleToFinance' as any)}
-                className="mt-1 border-2 border-[#ced4da] py-6 text-[20px] font-[400]"
+                className="mt-1 border border-gray-200 py-3 text-base font-medium w-full focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 rounded-md shadow-sm transition-all duration-200"
               ></Input>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#FAFAFA]rounded-lg shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
         <div className="space-y-4">
-          <h2 className="text-[20px] md:text-[28px] font-semibold border-b pb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2">
             Additional Comments
           </h2>
           <textarea
             {...register('additionalComments' as any)}
             rows={4}
-            className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 text-[20px] md:text-[28px]"
+            className="mt-1 block w-full rounded-md border border-gray-200 shadow-sm focus:border-[#FF0000] focus:ring-[#FF0000] focus:ring-opacity-50 p-3 text-base transition-all duration-200"
           />
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <div className="space-y-6">
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+        <div className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             <div className="flex items-start space-x-2">
               <input
                 type="checkbox"
                 id="acknowledgment"
                 {...register('acknowledgment' as any)}
-                className="mt-1 rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                className="mt-1 rounded border-gray-300 text-[#FF0000] shadow-sm focus:border-[#FF0000] focus:ring focus:ring-red-200 focus:ring-opacity-50"
               />
               <label
                 htmlFor="acknowledgment"
-                className="text-[16px] font-[700] text-gray-700"
+                className="text-base font-semibold text-gray-800"
               >
                 ACKNOWLEDGMENT AND CONSENT
               </label>
@@ -816,7 +815,7 @@ export function FinanceForm() {
           )}
 
           <div className="space-y-2">
-            <p className="text-sm text-gray-700 text-[16px]">
+            <p className="text-sm text-gray-700">
               I certify that the above information is complete and accurate to
               the best of my knowledge. Creditors who receive this application
               will retain the application whether or not it is approved.
@@ -837,11 +836,11 @@ export function FinanceForm() {
                 type="checkbox"
                 id="consent"
                 {...register('consent' as any)}
-                className="mt-1 rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                className="mt-1 rounded border-gray-300 text-[#FF0000] shadow-sm focus:border-[#FF0000] focus:ring focus:ring-red-200 focus:ring-opacity-50"
               />
               <label
                 htmlFor="consent"
-                className="text-[16px] font-bold text-gray-700"
+                className="text-base font-semibold text-gray-800"
               >
                 ACKNOWLEDGMENT AND CONSENT
               </label>
@@ -853,7 +852,7 @@ export function FinanceForm() {
             </span>
           )}
           <div className="space-y-2">
-            <p className="text-sm text-gray-700 text-[16px]">
+            <p className="text-sm text-gray-700">
               By checking this box, I consent to receive text messages and/or
               phone calls from or on behalf of MTZ Auto Sales LLC or its
               employees at the mobile phone number I provided above. By opting
@@ -868,7 +867,7 @@ export function FinanceForm() {
                 href="https://mtzautosales.com/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-[#FF0000] hover:underline"
               >
                 privacy policy
               </a>{' '}
@@ -878,13 +877,39 @@ export function FinanceForm() {
         </div>
       </div>
 
-      <div className="pt-2 text-left">
+      <div className="pt-2 text-center md:text-left">
         <button
           type="submit"
-          className="bg-[#025796] text-white py-2 px-6 rounded-md hover:bg-[#003154] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-lg font-semibold"
+          className="bg-[#FF0000] text-white py-3 px-8 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base font-medium transition-all duration-200 shadow-md"
           disabled={loading}
         >
-          {loading ? 'Submitting...' : 'Submit Credit Application'}
+          {loading ? (
+            <div className="flex items-center justify-center gap-2">
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Submitting...
+            </div>
+          ) : (
+            'Submit Credit Application'
+          )}
         </button>
       </div>
     </form>
