@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import SearchBar from './searchBar';
-
+import Image from 'next/image';
 const HeroSection: React.FC = () => {
   return (
     <section
@@ -27,9 +27,11 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className="w-full md:w-1/2  mt-12 md:mt-0 md:flex justify-center ">
-          <img
-            src="assets/heroSection.png"
+          <Image
+            src="/assets/heroSection.png"
             alt="Car"
+            width={730}
+            height={730}
             className="w-full md:w-[730px] object-cover"
           />
         </div>

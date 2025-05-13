@@ -19,6 +19,15 @@ export const carData = [
     description: '3.5 D5 PowerPulse Momentum 5dr AWD',
     price: '$40,000',
     imageUrl: '/assets/carListImage.svg',
+    images: [
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+    ],
+    mileage: '250',
+    fuel: 'Petrol',
+    transmission: 'Manual',
   },
   {
     id: 2,
@@ -26,6 +35,12 @@ export const carData = [
     description: '2.0 Turbocharged Sedan',
     price: '$30,000',
     imageUrl: '/assets/carListImage.svg',
+    images: [
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+    ],
   },
   {
     id: 3,
@@ -33,6 +48,15 @@ export const carData = [
     description: 'Sports Coupe with Luxury',
     price: '$80,000',
     imageUrl: '/assets/carListImage.svg',
+    images: [
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+    ],
+    mileage: '250',
+    fuel: 'Petrol',
+    transmission: 'Manual',
   },
   {
     id: 4,
@@ -40,13 +64,32 @@ export const carData = [
     description: 'Luxury Sedan with advanced features',
     price: '$50,000',
     imageUrl: '/assets/carListImage.svg',
+    images: [
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+    ],
+    mileage: '250',
+    fuel: 'Petrol',
+    transmission: 'Manual',
   },
+
   {
     id: 5,
     name: 'Mercedes-Benz C-Class',
     description: 'Compact luxury sedan with high-tech features',
     price: '$45,000',
     imageUrl: '/assets/carListImage.svg',
+    images: [
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+      '/assets/carListImage.svg',
+    ],
+    mileage: '250',
+    fuel: 'Petrol',
+    transmission: 'Manual',
   },
   {
     id: 6,
