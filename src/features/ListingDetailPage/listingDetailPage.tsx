@@ -143,6 +143,8 @@ const ListingDetailPage = () => {
     return <p>Car not found.</p>;
   }
 
+  const visibleImages = car.images.slice(0, 4);
+
   return (
     <>
       <div className="listing-detail-page px-4 py-6 md:py-40 max-w-[1440px] mx-auto py-40">
@@ -265,7 +267,7 @@ const ListingDetailPage = () => {
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-2">
-                {car.images.map((img, index) => (
+                {visibleImages.map((img: string, index: number) => (
                   <div
                     key={`thumbnail-${index}`}
                     className="w-full h-[263.188px] overflow-hidden rounded-[8px] relative cursor-pointer"
@@ -281,10 +283,10 @@ const ListingDetailPage = () => {
                       height={200}
                       className="rounded-[8px] object-cover w-full h-[263.188px] transition-transform duration-300 ease-in-out hover:scale-110"
                     />
-                    {index === car.images.length - 1 && (
+                    {index === 3 && car.images.length > 4 && (
                       <button
                         className="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-lg font-semibold rounded-[8px] transition hover:bg-black/80"
-                        onClick={(e) => {
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                           e.stopPropagation();
                           setIsModalOpen(true);
                           setModalIndex(0);
