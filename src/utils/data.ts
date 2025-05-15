@@ -613,7 +613,6 @@ export const CARS_DATA = [
     mileage: '60,641',
     fuelType: 'Gasoline',
     year: '2023',
-    transmission: 'Continuously Variable Transmission (CVT)',
     driveType: 'Front-Wheel Drive',
     condition: 'Used',
     cylinder: '4',
