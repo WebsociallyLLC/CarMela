@@ -144,7 +144,8 @@ const CarCard: React.FC<CarCardProps> = ({
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.3 }}
         >
-          {name}
+          {/* {name} */}
+          {name.length > 25 ? `${name.slice(0, 25)} ...` : name}
         </motion.h3>
 
         <motion.div
