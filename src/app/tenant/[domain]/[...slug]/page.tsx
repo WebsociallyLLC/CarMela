@@ -44,14 +44,16 @@ interface ThemeComponentProps {
 //   };
 // }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: any) {
+  const params =
+    typeof props.params.then === 'function' ? await props.params : props.params;
   const { domain, slug = [] } = params;
 
   console.log('inside slug page');
 
   // If slug is empty, this is the root path, let [domain]/page.tsx handle it
   if (!slug || slug.length === 0) {
-    return NotFound; // or notFound(), or throw an error
+    return null; // or notFound(), or throw an error
   }
 
   const page = capitalize(slug[0]);

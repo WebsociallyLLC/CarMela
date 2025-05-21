@@ -1,4 +1,4 @@
-import { FinanceFormData } from '@/pages/FinanceApplication/Finance/types';
+import { FinanceFormData } from '@/commonPages/FinanceApplication/Finance/types';
 import { formatMoney, formatPhone, isEmployment, isPerson } from './utils';
 
 // Listing Inquiry Email Template

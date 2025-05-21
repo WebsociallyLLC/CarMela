@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { DealerConfig } from '@/config/dealerConfig';
 
 const AboutUs = dynamic<{ config: DealerConfig }>(
-  () => import('@/pages/AboutUs'),
+  () => import('@/commonPages/AboutUs'),
 );
 
 export default function Home({ config }: { config: DealerConfig }) {

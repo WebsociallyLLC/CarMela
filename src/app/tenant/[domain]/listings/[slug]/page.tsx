@@ -4,21 +4,17 @@ import dynamic from 'next/dynamic';
 import { getDealerConfig, DealerConfig } from '@/config/dealerConfig';
 import { CARS_DATA } from '@/utils/data';
 
-interface Props {
-  params: {
-    domain: string;
-    slug: string;
-  };
-}
-
 // Define the component props interface
 interface ThemeComponentProps {
   config: DealerConfig;
   car?: any;
 }
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params;
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const params =
+    typeof props.params?.then === 'function'
+      ? await props.params
+      : props.params;
   const { domain } = params;
   console.log('generateMetadata - domain:', domain);
 
@@ -48,8 +44,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default async function VehicleDetailPage(props: Props) {
-  const params = await props.params;
+export default async function VehicleDetailPage(props: any) {
+  const params =
+    typeof props.params?.then === 'function'
+      ? await props.params
+      : props.params;
   const { domain, slug } = params;
 
   const formattedSlug = slug?.toLowerCase().replace(/-/g, ' ').trim();

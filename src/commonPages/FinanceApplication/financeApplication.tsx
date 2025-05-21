@@ -1,5 +1,5 @@
 import React from 'react';
-import FinanceForm from '@/pages/FinanceApplication/Finance';
+import FinanceForm from '@/commonPages/FinanceApplication/Finance';
 import PageHeader from '@/components/sections/PageHeader/PageHeaderV1/pageHeader';
 
 const Credit = () => {

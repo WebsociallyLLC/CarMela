@@ -4,54 +4,51 @@ import dynamic from 'next/dynamic';
 import { getDealerConfig, DealerConfig } from '@/config/dealerConfig';
 import NotFound from '@/app/not-found';
 
-interface Props {
-  params: {
-    domain: string;
-  };
-}
-
 // Define the component props interface
 interface ThemeComponentProps {
   config: DealerConfig;
   data?: any;
 }
 
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const { domain } = params;
-//   console.log('generateMetadata - domain:', domain);
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const params =
+    typeof props.params?.then === 'function'
+      ? await props.params
+      : props.params;
+  const { domain } = params;
+  const config = getDealerConfig(domain);
 
-//   const config = getDealerConfig(domain);
-//   console.log('generateMetadata - config:', config);
+  if (!config) {
+    return {
+      title: 'Not Found',
+      description: 'The requested dealer was not found',
+    };
+  }
 
-//   if (!config) {
-//     return {
-//       title: 'Not Found',
-//       description: 'The requested dealer was not found',
-//     };
-//   }
+  const seoData = config.seo?.home || {
+    title: config.name,
+    description: `Welcome to ${config.name}`,
+  };
 
-//   const seoData = config.seo?.home || {
-//     title: config.name,
-//     description: `Welcome to ${config.name}`,
-//   };
+  return {
+    title: seoData.title,
+    description: seoData.description,
+    openGraph: {
+      title: seoData.title,
+      description: seoData.description,
+      images: [seoData.ogImage],
+    },
+  };
+}
 
-//   return {
-//     title: seoData.title,
-//     description: seoData.description,
-//     openGraph: {
-//       title: seoData.title,
-//       description: seoData.description,
-//       images: [seoData.ogImage],
-//     },
-//   };
-// }
-
-export default async function Page({ params }: Props) {
+export default async function Page(props: any) {
+  const params =
+    typeof props.params?.then === 'function'
+      ? await props.params
+      : props.params;
   const { domain } = params;
 
   const config = getDealerConfig(domain);
-
-  console.log('inside main page');
 
   if (!config) {
     return notFound();

@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {
   financeFormSchema,
   type FinanceFormData,
-} from '@/pages/FinanceApplication/Finance/types';
+} from '@/commonPages/FinanceApplication/Finance/types';
 import { useState } from 'react';
 import React from 'react';
 import 'react-datepicker/dist/react-datepicker.css';

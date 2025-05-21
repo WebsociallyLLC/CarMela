@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { DealerConfig } from '@/config/dealerConfig';
 
 const Credit = dynamic<{ config: DealerConfig }>(
-  () => import('@/pages/FinanceApplication'),
+  () => import('@/commonPages/FinanceApplication'),
 );
 
 export default function Home({ config }: { config: DealerConfig }) {
