@@ -18,11 +18,11 @@ export default function Home({ config }: { config: DealerConfig }) {
 
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       {/* <BodyStyleSelector /> */}
 
       <CarListing />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <FeaturedProducts />
 
       <ContactUs />

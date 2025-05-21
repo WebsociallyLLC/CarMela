@@ -16,47 +16,50 @@ interface ThemeComponentProps {
   config: DealerConfig;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { domain, slug = [] } = params;
-  console.log('generateMetadata - domain:', domain, 'slug:', slug);
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const { domain, slug = [] } = params;
+//   const page = slug[0];
+//   const config = getDealerConfig(domain);
 
-  const page = slug[0];
-  const config = getDealerConfig(domain);
-  console.log('generateMetadata - config:', config);
+//   if (!config) {
+//     return {
+//       title: 'Not Found',
+//       description: 'The requested dealer was not found',
+//     };
+//   }
 
-  if (!config) {
-    return {
-      title: 'Not Found',
-      description: 'The requested dealer was not found',
-    };
-  }
+//   const seoData = config.seo?.[page] || {
+//     title: config.name,
+//     description: `Welcome to ${config.name}`,
+//   };
 
-  const seoData = config.seo?.[page] || {
-    title: config.name,
-    description: `Welcome to ${config.name}`,
-  };
-
-  return {
-    title: seoData.title,
-    description: seoData.description,
-    openGraph: {
-      title: seoData.title,
-      description: seoData.description,
-      images: [seoData.ogImage],
-    },
-  };
-}
+//   return {
+//     title: seoData.title,
+//     description: seoData.description,
+//     openGraph: {
+//       title: seoData.title,
+//       description: seoData.description,
+//       images: [seoData.ogImage],
+//     },
+//   };
+// }
 
 export default async function Page({ params }: Props) {
   const { domain, slug = [] } = params;
-  console.log('Page - domain:', domain, 'slug:', slug);
+
+  console.log('inside slug page');
+
+  // If slug is empty, this is the root path, let [domain]/page.tsx handle it
+  if (!slug || slug.length === 0) {
+    return NotFound; // or notFound(), or throw an error
+  }
 
   const page = capitalize(slug[0]);
   const config = getDealerConfig(domain);
-  console.log('Page - config:', config);
+
+  console.log(config?.theme, 'config?.theme');
 
   if (!config) {
-    console.log('Page - config not found, returning 404');
     return notFound();
   }
 

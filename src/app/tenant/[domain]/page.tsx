@@ -16,40 +16,42 @@ interface ThemeComponentProps {
   data?: any;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { domain } = params;
-  console.log('generateMetadata - domain:', domain);
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const { domain } = params;
+//   console.log('generateMetadata - domain:', domain);
 
-  const config = getDealerConfig(domain);
-  console.log('generateMetadata - config:', config);
+//   const config = getDealerConfig(domain);
+//   console.log('generateMetadata - config:', config);
 
-  if (!config) {
-    return {
-      title: 'Not Found',
-      description: 'The requested dealer was not found',
-    };
-  }
+//   if (!config) {
+//     return {
+//       title: 'Not Found',
+//       description: 'The requested dealer was not found',
+//     };
+//   }
 
-  const seoData = config.seo?.home || {
-    title: config.name,
-    description: `Welcome to ${config.name}`,
-  };
+//   const seoData = config.seo?.home || {
+//     title: config.name,
+//     description: `Welcome to ${config.name}`,
+//   };
 
-  return {
-    title: seoData.title,
-    description: seoData.description,
-    openGraph: {
-      title: seoData.title,
-      description: seoData.description,
-      images: [seoData.ogImage],
-    },
-  };
-}
+//   return {
+//     title: seoData.title,
+//     description: seoData.description,
+//     openGraph: {
+//       title: seoData.title,
+//       description: seoData.description,
+//       images: [seoData.ogImage],
+//     },
+//   };
+// }
 
 export default async function Page({ params }: Props) {
   const { domain } = params;
 
   const config = getDealerConfig(domain);
+
+  console.log('inside main page');
 
   if (!config) {
     return notFound();

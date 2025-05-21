@@ -18,6 +18,8 @@ export function middleware(request: NextRequest) {
     // Rewrite to the tenant route
     url.pathname = `/tenant/${cleanHostname}${url.pathname}`;
 
+    console.log(url.pathname, 'url.pathname');
+
     return NextResponse.rewrite(url);
   }
 
