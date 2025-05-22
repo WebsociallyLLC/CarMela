@@ -7,10 +7,12 @@ import TestimonialSlider from '../TestimonialSlider';
 import VideoSection from '../VideoSection';
 import AutoLoanCalculator from '../AutoLoanCalculator';
 import Navbar from '@/components/Navbar';
+// import Navbar from '@/components/Navbar3/navbar';
 
 const homePage = () => {
   return (
     <>
+      <Navbar />
       <HeroSection />
       {/* <BodyStyleSelector /> */}
       <CarListing />

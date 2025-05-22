@@ -6,7 +6,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import { Toaster } from 'sonner';
 // import Navbar from '@/components/Navbar';
 import Footer from '@/features/Footer';
-import Navbar from '@/components/Navbar2/navbar';
+// import Navbar from '@/components/Navbar2/navbar';
+import Navbar from '@/components/Navbar3/navbar';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
