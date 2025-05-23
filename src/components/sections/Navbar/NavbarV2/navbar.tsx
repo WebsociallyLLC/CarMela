@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone } from 'lucide-react';
+import TopInfoHeader from '@/components/shared/TopInfoHeader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -63,8 +64,11 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
 
+      {/* Desktop Top Banner */}
+
+      <TopInfoHeader />
       <nav
-        className={`fixed z-50 w-full py-4 md:py-6 px-4 sm:px-6 lg:px-16 transition-all duration-300 ${
+        className={`fixed z-50 w-full py-4 md:py-6 px-4 sm:px-6 lg:px-16 mt-6 transition-all duration-300 ${
           isScrolled || isCarDetailPage ? 'bg-[#050B20]' : 'bg-transparent'
         } ${!isScrolled && !isCarDetailPage ? 'md:top-0 top-[32px]' : 'md:top-0 top-[32px]'}`}
       >

@@ -9,10 +9,10 @@ import {
   FaClock,
 } from 'react-icons/fa';
 
-export default function Navbar() {
+export default function TopInfoHeader() {
   return (
-    <div className="bg-[#0a2a66] text-white text-sm">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4">
+    <div className="bg-[#0a2a66] text-white text-sm hidden lg:block fixed top-0 left-0 w-full z-[60] ">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4 lg:px-12">
         {/* Left Side */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center">
           <span className="flex items-center gap-2">
