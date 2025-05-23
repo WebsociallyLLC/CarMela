@@ -421,7 +421,7 @@ export const CARS_DATA = [
     },
   },
   {
-    id: 5,
+    id: 9,
     name: '2015 Volkswagen Passat TDI SEL',
     make: 'Volkswagen',
     model: 'Passat',
@@ -506,7 +506,7 @@ export const CARS_DATA = [
   },
 
   {
-    id: 6,
+    id: 10,
     name: '2007 Lexus ES 350',
     make: 'Lexus',
     model: 'ES 350',
@@ -589,7 +589,7 @@ export const CARS_DATA = [
     },
   },
   {
-    id: 7,
+    id: 11,
     name: '2023 Chevrolet Malibu 1LT',
     make: 'Chevrolet',
     model: 'Malibu',
