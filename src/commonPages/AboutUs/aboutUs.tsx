@@ -5,6 +5,7 @@ import WhyChooseUs from '@/components/sections/WhyChooseUs/WhyChooseUsV2';
 import TestimonialV1 from '@/components/sections/Testimonials/TestimonialV1';
 import { galleryImages } from './constant';
 import PageHeader from '@/components/sections/PageHeader/PageHeaderV1/pageHeader';
+import ChooseBodyType2 from '@/components/sections/ChooseBodyType/ChooseBodyType2';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -225,6 +226,7 @@ const About: React.FC = () => {
       </div>
       <WhyChooseUs />
       <TestimonialV1 />
+      <ChooseBodyType2 />
       <motion.div
         className="w-full h-[400px] bg-cover bg-center relative"
         style={{ backgroundImage: "url('/assets/sports-car.svg')" }}
