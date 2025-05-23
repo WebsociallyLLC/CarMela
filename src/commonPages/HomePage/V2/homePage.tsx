@@ -7,7 +7,7 @@ import FeaturedProducts from '@/components/shared/FeaturedProducts';
 import ContactUs from '@/components/sections/ContactUs/ContactUsV1';
 import CarFind from '@/components/shared/CarFindSection';
 import HeroSection from '@/components/sections/Hero/HeroV2';
-import TestimonialV2 from '@/components/sections/Testimonials/TestimonialV2';
+import TestimonialV3 from '@/components/sections/Testimonials/TestimonialV3';
 import { DealerConfig } from '@/config/dealerConfig';
 import CarListing from '@/components/shared/CarListing';
 
@@ -28,7 +28,7 @@ const homePage: React.FC<HomePageProps> = ({ config }) => {
       <ContactUs />
       <TestimonialV1 />
       <CarTrade />
-      <TestimonialV2 />
+      <TestimonialV3 />
       <CarFind />
     </>
   );
