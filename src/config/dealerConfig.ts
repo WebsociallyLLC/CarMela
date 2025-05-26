@@ -86,9 +86,9 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
       },
     },
   },
-  'mtzautosales.com': {
-    name: 'MTZ Auto Sales',
-    theme: 'mtzAutoSales',
+  'takeoffmotorcars.com': {
+    name: 'Takeoff Motors',
+    theme: 'takeoffMotors',
     fallbackTheme: 'baseTheme',
     dealerId: 'dealer_mtz456',
     apiBaseUrl: 'https://api.mycars.com',
