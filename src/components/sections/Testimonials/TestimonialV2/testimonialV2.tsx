@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -124,10 +125,12 @@ const TestimonialCard = ({
       <div className="absolute left-10 -bottom-6 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[20px] border-t-[#353c47]"></div>
       {/* Avatar below card */}
       <div className="absolute left-1/2 -bottom-16 transform -translate-x-1/2">
-        <img
+        <Image
           src={avatar}
           alt={name}
           className="w-16 h-16 rounded-full border-4 border-[#353c47] object-cover shadow-lg"
+          width={48}
+          height={48}
         />
       </div>
     </motion.div>

@@ -26,7 +26,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
 
       <div className="max-w-[1440px] mx-auto px-6 relative z-10">
         {/* {showBreadcrumbs && (
-          <div className="mb-4 flex items-center text-sm text-gray-300">
+          <div className="mb-4 flex items-center text-sm text-gray-300">  
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
