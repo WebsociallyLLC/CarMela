@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from '@/components/UI/select';
 import { Search as SearchIcon } from 'lucide-react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { CARS_DATA } from '@/utils/data';
 
 // Get unique makes from CARS_DATA
@@ -149,7 +149,7 @@ const SearchBar: React.FC = () => {
         </div>
       </form>
 
-      <div className="w-full flex justify-center mt-6">
+      {/* <div className="w-full flex justify-center mt-6">
         <Link
           href="/listings"
           className={`${isMobile ? 'w-[90%] max-w-md' : 'w-[70%] max-w-3xl'} mx-auto`}
@@ -161,7 +161,7 @@ const SearchBar: React.FC = () => {
             View All Collection
           </button>
         </Link>
-      </div>
+      </div> */}
     </>
   );
 };
