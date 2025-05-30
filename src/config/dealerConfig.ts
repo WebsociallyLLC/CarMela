@@ -86,7 +86,7 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
       },
     },
   },
-  'takeoffmotorcars.com': {
+  'www.takeoffmotorcars.com': {
     name: 'Takeoff Motors',
     theme: 'takeoffmotorcars',
     fallbackTheme: 'baseTheme',
