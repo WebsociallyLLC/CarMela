@@ -226,9 +226,9 @@ const About: React.FC = () => {
       </div>
       <WhyChooseUs />
       <TestimonialV1 />
-      <ChooseBodyType2 />
+      {/* <ChooseBodyType2 /> */}
       <motion.div
-        className="w-full h-[400px] bg-cover bg-center relative"
+        className="w-full h-[400px] bg-cover bg-center relative hidden md:block"
         style={{ backgroundImage: "url('/assets/sports-car.svg')" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

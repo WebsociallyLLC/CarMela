@@ -54,7 +54,7 @@ const CarListing: React.FC = () => {
       transition={{ duration: 0.6 }}
       className="py-16 md:py-20 bg-[#F4F4F4]"
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="flex justify-between items-center mb-8">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}

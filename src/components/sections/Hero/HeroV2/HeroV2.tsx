@@ -18,9 +18,9 @@ const figtree = Figtree({
 
 const bgImages = [
   '/assets/heroSection.svg',
-  '/images/hero1.png',
-  '/images/hero2.png',
-  '/images/hero3.png',
+  '/assets/hero1.png',
+  '/assets/hero2.png',
+  '/assets/hero3.png',
 ];
 
 const AUTO_SLIDE_INTERVAL = 2000;

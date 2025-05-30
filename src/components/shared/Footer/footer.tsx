@@ -30,11 +30,19 @@ const Footer: React.FC = () => {
           </div>
           <FooterColumn
             title="Company"
-            links={['Home', 'About', 'Inventory', 'Contact']}
+            links={[
+              { title: 'Home', href: '/' },
+              { title: 'About', href: '/about' },
+              { title: 'Inventory', href: '/listings' },
+              { title: 'Contact', href: '/contact' },
+            ]}
           />
           <FooterColumn
             title="Quick Links"
-            links={['Get in Touch', 'Financing']}
+            links={[
+              { title: 'Get in Touch', href: '/contact' },
+              { title: 'Financing', href: '/credit' },
+            ]}
           />
           <div className="mb-4 md:mb-0">
             <h3 className="font-bold text-lg mb-4">Connect With Us</h3>

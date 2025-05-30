@@ -16,6 +16,8 @@ export function middleware(request: NextRequest) {
     // Clean the hostname by removing port
     const cleanHostname = hostname.split(':')[0];
 
+    console.log(cleanHostname, 'cleanHostname');
+
     // Rewrite to the tenant route
     url.pathname = `/tenant/${cleanHostname}${url.pathname}`;
 

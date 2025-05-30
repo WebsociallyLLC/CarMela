@@ -88,7 +88,7 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
   },
   'takeoffmotorcars.com': {
     name: 'Takeoff Motors',
-    theme: 'takeoffMotors',
+    theme: 'takeoffmotorcars',
     fallbackTheme: 'baseTheme',
     dealerId: 'dealer_mtz456',
     apiBaseUrl: 'https://api.mycars.com',
@@ -101,18 +101,50 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
     },
     seo: {
       home: {
-        title: 'MTZ Auto Sales | Quality Used Cars in Dublin',
+        title: 'Takeoff Motors | Quality Used Cars in Dublin',
         description: 'Your trusted source for quality used cars in Dublin.',
         ogImage: '/logos/mtz-og.jpg',
       },
       about: {
-        title: 'About MTZ Auto Sales | Your Trusted Car Dealer',
+        title: 'About Takeoff Motors | Your Trusted Car Dealer',
         description:
-          "Discover why MTZ Auto Sales is Dublin's preferred car dealer.",
+          "Discover why Takeoff Motors is Dublin's preferred car dealer.",
         ogImage: '/logos/mtz-og.jpg',
       },
       inventory: {
-        title: 'Used Cars Inventory | MTZ Auto Sales Dublin',
+        title: 'Used Cars Inventory | Takeoff Motors Dublin',
+        description: 'Explore our extensive inventory of quality used cars.',
+        ogImage: '/logos/mtz-og.jpg',
+      },
+    },
+  },
+  'takeoffmotorcars.local': {
+    name: 'Takeoff Motors',
+    theme: 'takeoffmotorcars',
+    fallbackTheme: 'baseTheme',
+    dealerId: 'dealer_mtz456',
+    apiBaseUrl: 'https://api.mycars.com',
+    branding: {
+      primaryColor: '#0c4a6e',
+      secondaryColor: '#f0f0f0',
+      accentColor: '#ff9900',
+      logo: '/logos/mtz.png',
+      fontFamily: '"Roboto", sans-serif',
+    },
+    seo: {
+      home: {
+        title: 'Takeoff Motors | Quality Used Cars in Dublin',
+        description: 'Your trusted source for quality used cars in Dublin.',
+        ogImage: '/logos/mtz-og.jpg',
+      },
+      about: {
+        title: 'About Takeoff Motors | Your Trusted Car Dealer',
+        description:
+          "Discover why Takeoff Motors is Dublin's preferred car dealer.",
+        ogImage: '/logos/mtz-og.jpg',
+      },
+      inventory: {
+        title: 'Used Cars Inventory | Takeoff Motors Dublin',
         description: 'Explore our extensive inventory of quality used cars.',
         ogImage: '/logos/mtz-og.jpg',
       },

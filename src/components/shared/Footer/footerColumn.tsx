@@ -3,7 +3,7 @@ import React from 'react';
 
 interface FooterColumnProps {
   title: string;
-  links: string[];
+  links: { title: string; href: string }[];
 }
 
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
@@ -12,9 +12,9 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
       <h3 className="font-bold text-lg mb-4">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
-          <li key={link}>
-            <Link href="#" className="hover:underline">
-              {link}
+          <li key={link.title}>
+            <Link href={link.href} className="hover:underline">
+              {link.title}
             </Link>
           </li>
         ))}

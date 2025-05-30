@@ -56,6 +56,8 @@ export default async function Page(props: any) {
 
   const page = 'Home'; // Always Home for the root
 
+  console.log(config.theme, 'config.theme');
+
   // Type the dynamic component
   const ThemeComponent = dynamic<ThemeComponentProps>(
     async () => {
