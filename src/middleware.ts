@@ -9,7 +9,9 @@ export function middleware(request: NextRequest) {
   if (
     !url.pathname.startsWith('/_next') &&
     !url.pathname.startsWith('/api') &&
-    !url.pathname.startsWith('/public')
+    !url.pathname.startsWith('/public') &&
+    !url.pathname.startsWith('/assets') &&
+    !url.pathname.startsWith('/cars')
   ) {
     // Clean the hostname by removing port
     const cleanHostname = hostname.split(':')[0];
