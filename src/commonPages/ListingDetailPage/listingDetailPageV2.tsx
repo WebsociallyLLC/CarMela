@@ -12,15 +12,13 @@ import { ListingInquiryEmailTemplate } from '@/utils/email';
 import CarTrade from '@/components/sections/FinanceApplicationSection/FinanceApplicationSection1';
 import { toast } from 'sonner';
 import { CARS_DATA } from '@/utils/data';
-import { DealerConfig } from '@/config/dealerConfig';
 
-interface ListingDetailPageProps {
-  config: DealerConfig;
-  car: any;
-}
+const ListingDetailPageV2 = () => {
+  const { slug } = useParams();
 
-const ListingDetailPage = ({ config, car }: ListingDetailPageProps) => {
-  // const { slug } = useParams();
+  console.log(slug);
+
+  const car = CARS_DATA.find((item) => item.slug === slug);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
@@ -721,4 +719,4 @@ const ListingDetailPage = ({ config, car }: ListingDetailPageProps) => {
   );
 };
 
-export default ListingDetailPage;
+export default ListingDetailPageV2;

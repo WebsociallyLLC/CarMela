@@ -101,7 +101,7 @@ const CarListing: React.FC = () => {
             }
           `}</style>
 
-          {CARS_DATA.map((car: any, index: any) => (
+          {CARS_DATA.slice(0, 4).map((car: any, index: any) => (
             <motion.div key={car.id} variants={item} custom={index}>
               <CarCard
                 images={car.images}

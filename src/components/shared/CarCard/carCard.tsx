@@ -81,10 +81,8 @@ const CarCard: React.FC<CarCardProps> = ({
               onClick={prevImage}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white shadow-md z-10"
               whileHover={{
-                scale: 1.1,
                 backgroundColor: 'rgba(255, 255, 255, 0.95)',
               }}
-              whileTap={{ scale: 0.9 }}
               initial={{ opacity: isHovered ? 1 : 0 }}
               animate={{ opacity: isHovered ? 1 : 0 }}
               transition={{ duration: 0.2 }}
@@ -95,10 +93,8 @@ const CarCard: React.FC<CarCardProps> = ({
               onClick={nextImage}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white shadow-md z-10"
               whileHover={{
-                scale: 1.1,
                 backgroundColor: 'rgba(255, 255, 255, 0.95)',
               }}
-              whileTap={{ scale: 0.9 }}
               initial={{ opacity: isHovered ? 1 : 0 }}
               animate={{ opacity: isHovered ? 1 : 0 }}
               transition={{ duration: 0.2 }}
@@ -107,7 +103,7 @@ const CarCard: React.FC<CarCardProps> = ({
             </motion.button>
 
             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
-              {images.map((_, idx) => (
+              {(images.length > 0 ? images.slice(0, 5) : []).map((_, idx) => (
                 <motion.span
                   key={idx}
                   className={`block w-2 h-2 rounded-full ${currentImageIndex === idx ? 'bg-white' : 'bg-white/50'}`}
@@ -188,7 +184,9 @@ const CarCard: React.FC<CarCardProps> = ({
             className="text-xl font-bold text-gray-900"
             whileHover={{ scale: 1.05 }}
           >
-            {price}
+            {!price || price.trim() === '' || price.trim() === '$—'
+              ? 'Your Call'
+              : price}
           </motion.span>
           <motion.div whileHover={{ scale: 1.05, x: 2 }}>
             <Link
