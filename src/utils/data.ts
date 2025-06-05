@@ -21,7 +21,7 @@ export const CARS_DATA = [
     slug: '2017-bmw-x5-xdrive35i',
     description:
       'Luxury AWD SUV with 3rd Row, Panoramic Roof, Navigation & Premium Package',
-    price: '$22,500',
+    price: '$17,499',
     imageUrl: '/cars/car0.jpeg',
     images: [
       '/cars/car0.jpeg',
@@ -111,7 +111,7 @@ export const CARS_DATA = [
     slug: '2024-toyota-corolla-le',
     description:
       'Reliable fuel-efficient sedan with modern tech and Toyota Safety Sense 3.0',
-    price: '$—', // You can fill this in
+    price: '$19,999', // You can fill this in
     imageUrl: '/cars/car0.jpeg',
     images: [
       '/cars/24Corolla/24Cor (1).jpg',
@@ -197,11 +197,11 @@ export const CARS_DATA = [
     slug: '2006-honda-accord-lx',
     description:
       'Reliable and fuel-efficient sedan with low mileage and a smooth ride.',
-    price: '$—', // Fill this in based on your asking price
+    price: '$4,000', // Fill this in based on your asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
-      '/cars/Accord/acc (3).JPG',
       '/cars/Accord/acc (2).JPG',
+      '/cars/Accord/acc (3).JPG',
       '/cars/Accord/acc (4).JPG',
       '/cars/Accord/acc (5).JPG',
       '/cars/Accord/acc (6).JPG',
@@ -282,7 +282,7 @@ export const CARS_DATA = [
     slug: '2015-hyundai-sonata-sport',
     description:
       'Midsize sedan with sporty styling, great fuel efficiency, and a comfortable ride.',
-    price: '$—', // Replace with your actual asking price
+    price: '$4,000', // Replace with your actual asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
       '/cars/Hundai/1.JPEG',
@@ -367,7 +367,7 @@ export const CARS_DATA = [
     slug: '2007-acura-mdx',
     description:
       'Luxury AWD SUV with seating for seven, premium features, and advanced safety systems.',
-    price: '$—', // Replace with your actual asking price
+    price: '$7,000', // Replace with your actual asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
       '/cars/car9.jpeg',
@@ -458,9 +458,9 @@ export const CARS_DATA = [
       '/cars/VW/vw5.jpg',
       '/cars/VW/vw6.jpg',
       '/cars/VW/vw7.jpg',
-      '/cars/VW/vw8.jpeg',
-      '/cars/VW/vw9.jpeg',
-      '/cars/VW/vw10.jpeg',
+      '/cars/VW/vw8.jpg',
+      '/cars/VW/vw9.jpg',
+      '/cars/VW/vw10.jpg',
     ],
     body: 'Sedan',
     mileage: '150,436',
@@ -636,6 +636,7 @@ export const CARS_DATA = [
       '/cars/Malibu/13.JPEG',
       '/cars/Malibu/14.JPEG',
       '/cars/Malibu/15.JPEG',
+      '/cars/Malibu/16.JPEG',
     ],
     body: 'Sedan',
     mileage: '60,641',
@@ -710,7 +711,7 @@ export const CARS_DATA = [
     slug: '2016-toyota-corolla-sport-special-edition',
     description:
       'Sporty compact sedan offering excellent fuel efficiency, reliability, and special edition styling features.',
-    price: '$14,980',
+    price: '$13,499',
     imageUrl: '/cars/16Corolla/Cor1.JPEG',
     images: [
       '/cars/16Corolla/Cor1.JPEG',
