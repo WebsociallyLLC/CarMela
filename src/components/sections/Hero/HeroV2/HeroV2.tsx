@@ -25,9 +25,22 @@ const bgImages = [
 
 const AUTO_SLIDE_INTERVAL = 2000;
 
+// Hook to detect mobile devices
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, [breakpoint]);
+  return isMobile;
+}
+
 const HeroSection: React.FC = () => {
   const [currentBg, setCurrentBg] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const isMobile = useIsMobile();
 
   const handlePrev = () => {
     if (!isTransitioning) {
@@ -60,13 +73,17 @@ const HeroSection: React.FC = () => {
       <AnimatePresence>
         <motion.div
           key={currentBg}
-          initial={{ opacity: 0.4, scale: 1.1 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 0.7, ease: 'easeOut' },
-          }}
-          exit={{ opacity: 0, scale: 1.05 }}
+          initial={isMobile ? false : { opacity: 0.4, scale: 1.1 }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.7, ease: 'easeOut' },
+                }
+          }
+          exit={isMobile ? {} : { opacity: 0, scale: 1.05 }}
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(${bgImages[currentBg]})`,
