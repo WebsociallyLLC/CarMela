@@ -168,7 +168,7 @@ const ContactUs: React.FC = () => {
 
   const onSubmit = async (formData: any) => {
     setIsSubmitting(true);
-    const email = 'tt.talhatariq1@gmail.com'; // Replace with your recipient email
+    const email = 'takeoffmotorcars@gmail.com'; // Replace with your recipient email
     const subject = `New Contact from ${formData.firstName} ${formData.lastName}`;
     const html = EmailTemplate(formData);
 

@@ -268,7 +268,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const email = 'tt.talhatariq1@gmail.com'; // Replace with your recipient email
+      const email = 'takeoffmotorcars@gmail.com'; // Replace with your recipient email
       const subject = `New Contact from ${formData.name}`;
       const html = EmailTemplate(formData);
 

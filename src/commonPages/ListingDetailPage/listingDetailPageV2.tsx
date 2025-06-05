@@ -126,7 +126,7 @@ const ListingDetailPageV2 = () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            email: 'tt.talhatariq1@gmail.com',
+            email: 'takeoffmotorcars@gmail.com',
             subject: `Listing Inquiry: ${car?.name || ''}`,
             html,
           }),
@@ -321,14 +321,6 @@ const ListingDetailPageV2 = () => {
               >
                 Contact Us
               </button>
-              <a
-                className="flex-1 py-4 rounded-lg border border-green-700 text-green-700 font-bold text-md shadow hover:bg-green-100 transition-colors duration-200 text-center"
-                href={`https://wa.me/+923008000000`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Chat via WhatsApp
-              </a>
             </div>
           </div>
         </div>
@@ -583,22 +575,6 @@ const ListingDetailPageV2 = () => {
                   {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
-              <Link
-                href={`https://wa.me/.phone.replace(/\D/g, '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="w-full text-green-800 h-14 border border-green-800 rounded-xl flex justify-center my-4 items-center text-bold">
-                  Chat Via Whatsapp
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                  ></svg>
-                </button>
-              </Link>
             </div>
           </div>
         </div>

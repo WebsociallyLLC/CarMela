@@ -57,10 +57,10 @@ const Navbar: React.FC = () => {
       {/* Mobile Top Banner */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-[#FF0000] py-1.5 px-4 z-[60] flex justify-center items-center">
         <Link
-          href="tel:+1234567890"
+          href="tel:+17633738434"
           className="flex items-center justify-center gap-2 text-white text-sm font-medium"
         >
-          <Phone size={14} /> Call Now: (123) 456-7890
+          <Phone size={14} /> Call Now: (763) 373-8434
         </Link>
       </div>
 
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
             </ul>
 
             <Link
-              href="tel:+1234567890"
+              href="tel:+17633738434"
               className="flex items-center gap-2 bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium ml-4"
             >
               <Phone size={16} />
@@ -150,7 +150,7 @@ const Navbar: React.FC = () => {
           ))}
           <li className="mt-6 px-8">
             <Link
-              href="tel:+1234567890"
+              href="tel:+17633738434"
               className="flex items-center justify-center gap-2 bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium"
             >
               <Phone size={16} />

@@ -66,6 +66,7 @@ const VehicleListing = () => {
       const maxPrice = parseInt(price);
       filtered = filtered.filter((car) => {
         const carPrice = parseInt(car.price.replace(/[^0-9]/g, ''));
+        if (isNaN(carPrice)) return true;
         return carPrice <= maxPrice;
       });
     }
