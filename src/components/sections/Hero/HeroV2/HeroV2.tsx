@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
   }, [isTransitioning]);
 
   return (
-    <section className="relative w-full md:h-screen overflow-hidden h-[1100px]">
+    <section className="relative w-full md:h-screen overflow-hidden h-[1000px]">
       <AnimatePresence>
         <motion.div
           key={currentBg}
