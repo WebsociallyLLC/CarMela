@@ -70,20 +70,9 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative w-full md:h-screen overflow-hidden h-[1000px]">
-      <AnimatePresence>
-        <motion.div
+      {isMobile ? (
+        <div
           key={currentBg}
-          initial={isMobile ? false : { opacity: 0.4, scale: 1.1 }}
-          animate={
-            isMobile
-              ? {}
-              : {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.7, ease: 'easeOut' },
-                }
-          }
-          exit={isMobile ? {} : { opacity: 0, scale: 1.05 }}
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: `url(${bgImages[currentBg]})`,
@@ -91,7 +80,26 @@ const HeroSection: React.FC = () => {
             backgroundPosition: 'center',
           }}
         />
-      </AnimatePresence>
+      ) : (
+        <AnimatePresence>
+          <motion.div
+            key={currentBg}
+            initial={{ opacity: 0.4, scale: 1.1 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.7, ease: 'easeOut' },
+            }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            className="absolute inset-0 w-full h-full"
+            style={{
+              backgroundImage: `url(${bgImages[currentBg]})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </AnimatePresence>
+      )}
 
       <motion.div
         initial={{ opacity: 0 }}
