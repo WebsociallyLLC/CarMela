@@ -6,15 +6,13 @@ export const metadata = {
     'TakeoffMotors, car listings, new cars, used cars, cars for sale, car dealership, SUVs, trucks, best car deals, vehicle inventory',
 };
 
-import VehicleListing from '@/commonPages/VehicleListing';
-import React from 'react';
+import { Suspense } from 'react';
+import VehicleListing from '@/commonPages/VehicleListing/vehicleListing';
 
-const ListingsPage = () => {
+export default function ListingsPage() {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <VehicleListing />
-    </>
+    </Suspense>
   );
-};
-
-export default ListingsPage;
+}
