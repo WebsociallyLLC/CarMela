@@ -135,31 +135,39 @@ const HeroSection: React.FC = () => {
           Find Your Perfect Car
         </motion.h1>
 
-        <div className="relative md:mb-10 mb-12 w-full">
+        <div className="relative md:mb-10 mb-12 w-full h-[70px]">
           <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: '#f8f8f8' }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ backgroundColor: '#f8f8f8' }}
             onClick={handlePrev}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white py-2 px-6 rounded-[30px] z-30 transition-colors duration-300 hidden md:flex"
           >
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              size="lg"
-              className="text-[#050B20]"
-            />
+            <motion.span
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                size="lg"
+                className="text-[#050B20]"
+              />
+            </motion.span>
           </motion.button>
 
           <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: '#f8f8f8' }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ backgroundColor: '#f8f8f8' }}
             onClick={handleNext}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white py-2 px-6 rounded-[30px] z-30 transition-colors duration-300 hidden md:flex"
           >
-            <FontAwesomeIcon
-              icon={faChevronRight}
-              size="lg"
-              className="text-[#050B20]"
-            />
+            <motion.span
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                size="lg"
+                className="text-[#050B20]"
+              />
+            </motion.span>
           </motion.button>
         </div>
 

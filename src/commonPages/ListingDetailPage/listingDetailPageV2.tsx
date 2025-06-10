@@ -36,6 +36,19 @@ const ListingDetailPageV2 = () => {
     };
   }, [isModalOpen]);
 
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isModalOpen]);
+
   const handleSelect = () => {
     console.log('Car selected!');
   };
