@@ -51,170 +51,172 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
   };
 
   const prevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     setCurrentImageIndex(
       (prev) => (prev - 1 + product.images.length) % product.images.length,
     );
   };
 
   return (
-    <motion.div
-      className="h-full"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
-      }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-    >
+    <Link href={`/listings/${product.slug}`} className="block h-full">
       <motion.div
-        className="flex flex-col md:flex-row bg-white rounded-2xl border border-[#E6E6E6] shadow-md overflow-hidden h-auto md:h-[240px]"
-        whileHover={{
-          y: -5,
-          boxShadow: '0 15px 30px rgba(0,0,0,0.1)',
-          borderColor: '#d4d4d4',
+        className="h-full cursor-pointer"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.1,
+          type: 'spring',
+          stiffness: 100,
+          damping: 15,
         }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
       >
-        <div className="relative w-full h-[200px] md:w-1/2 md:h-full">
-          <motion.div
-            initial={false}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            key={currentImageIndex}
-            className="h-full"
-          >
-            <Image
-              src={product.images[currentImageIndex]}
-              alt={product.title}
-              className="w-full h-full object-cover transition-all duration-300"
-              width={600}
-              height={400}
-              quality={90}
-              priority={index === 0}
-            />
-          </motion.div>
-          {product.images.length > 1 && (
-            <>
-              <motion.button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white transition-all shadow-md z-10"
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: 'rgba(255,255,255,0.95)',
-                }}
-                whileTap={{ scale: 0.9 }}
-                animate={{ opacity: isHovered ? 1 : 0.7 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronLeft size={18} />
-              </motion.button>
-              <motion.button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white transition-all shadow-md z-10"
-                whileHover={{
-                  scale: 1.1,
-                  backgroundColor: 'rgba(255,255,255,0.95)',
-                }}
-                whileTap={{ scale: 0.9 }}
-                animate={{ opacity: isHovered ? 1 : 0.7 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronRight size={18} />
-              </motion.button>
-              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
-                {product.images.map((_: any, i: number) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      scale: currentImageIndex === i ? 1.2 : 1,
-                      backgroundColor:
-                        currentImageIndex === i
-                          ? 'white'
-                          : 'rgba(255,255,255,0.5)',
-                    }}
-                    transition={{ duration: 0.2 }}
-                    className="w-2 h-2 rounded-full"
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-        <div className="p-4 md:p-6 flex flex-col justify-between w-full md:w-1/2">
-          <div>
-            <motion.h3
-              className="text-xl font-bold text-[#181C23]"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
-            >
-              {product.name}
-            </motion.h3>
-          </div>
-          <motion.div
-            className="flex justify-between text-sm border-t pt-4 mt-4 text-[#181C23]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-          >
-            <motion.span
-              className="flex flex-col items-center"
-              whileHover={{ y: -2 }}
-            >
-              <Gauge className="mb-1 w-5 h-5 text-gray-700" />
-              {product.mileage}
-            </motion.span>
-            <motion.span
-              className="flex flex-col items-center"
-              whileHover={{ y: -2 }}
-            >
-              <Fuel className="mb-1 w-5 h-5 text-gray-700" />
-              {product.fuelType}
-            </motion.span>
-            <motion.span
-              className="flex flex-col items-center"
-              whileHover={{ y: -2 }}
-            >
-              <Cog className="mb-1 w-5 h-5 text-gray-700" />
-              {product.transmission}
-            </motion.span>
-          </motion.div>
-          <motion.div
-            className="flex justify-between items-center mt-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.3 }}
-          >
-            <motion.span
-              className="text-lg font-bold text-[#181C23]"
-              whileHover={{ scale: 1.05 }}
-            >
-              {product.price}
-            </motion.span>
+        <motion.div
+          className="flex flex-col md:flex-row bg-white rounded-2xl border border-[#E6E6E6] shadow-md overflow-hidden h-auto md:h-[240px]"
+          whileHover={{
+            y: -5,
+            boxShadow: '0 15px 30px rgba(0,0,0,0.1)',
+            borderColor: '#d4d4d4',
+          }}
+        >
+          <div className="relative w-full h-[200px] md:w-1/2 md:h-full">
             <motion.div
-              whileHover={{ x: 3 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              initial={false}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              key={currentImageIndex}
+              className="h-full"
             >
-              <Link
-                href={`/listings/${product.slug}`}
-                className="text-[#FF0000] font-medium flex items-center gap-1 hover:underline transition-all"
-              >
-                View Details <ArrowUpRight size={16} />
-              </Link>
+              <Image
+                src={product.images[currentImageIndex]}
+                alt={product.title}
+                className="w-full h-full object-cover transition-all duration-300"
+                width={600}
+                height={400}
+                quality={90}
+                priority={index === 0}
+              />
             </motion.div>
-          </motion.div>
-        </div>
+            {product.images.length > 1 && (
+              <>
+                <motion.button
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white shadow-md z-10"
+                  whileHover={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  }}
+                  initial={{ opacity: isHovered ? 1 : 0 }}
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronLeft size={18} />
+                </motion.button>
+                <motion.button
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 text-gray-800 hover:bg-white shadow-md z-10"
+                  whileHover={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  }}
+                  initial={{ opacity: isHovered ? 1 : 0 }}
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronRight size={18} />
+                </motion.button>
+                <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                  {(product.images.length > 0
+                    ? product.images.slice(0, 5)
+                    : []
+                  ).map((_: any, i: number) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        scale: currentImageIndex === i ? 1.2 : 1,
+                        backgroundColor:
+                          currentImageIndex === i
+                            ? 'white'
+                            : 'rgba(255,255,255,0.5)',
+                      }}
+                      transition={{ duration: 0.2 }}
+                      className="w-2 h-2 rounded-full"
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          <div className="p-4 md:p-6 flex flex-col justify-between w-full md:w-1/2">
+            <div>
+              <motion.h3
+                className="text-xl font-bold text-[#181C23]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.3 }}
+              >
+                {product.name}
+              </motion.h3>
+            </div>
+            <motion.div
+              className="flex justify-between text-sm border-t pt-4 mt-4 text-[#181C23]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+            >
+              <motion.span
+                className="flex flex-col items-center"
+                whileHover={{ y: -2 }}
+              >
+                <Gauge className="mb-1 w-5 h-5 text-gray-700" />
+                {product.mileage}
+              </motion.span>
+              <motion.span
+                className="flex flex-col items-center"
+                whileHover={{ y: -2 }}
+              >
+                <Fuel className="mb-1 w-5 h-5 text-gray-700" />
+                {product.fuelType}
+              </motion.span>
+              <motion.span
+                className="flex flex-col items-center"
+                whileHover={{ y: -2 }}
+              >
+                <Cog className="mb-1 w-5 h-5 text-gray-700" />
+                {product.transmission}
+              </motion.span>
+            </motion.div>
+            <motion.div
+              className="flex justify-between items-center mt-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.3 }}
+            >
+              <motion.span
+                className="text-lg font-bold text-[#181C23]"
+                whileHover={{ scale: 1.05 }}
+              >
+                {product.price}
+              </motion.span>
+              <motion.div
+                whileHover={{ x: 3 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                <span className="text-[#FF0000] font-medium flex items-center gap-1 hover:underline transition-all">
+                  View Details <ArrowUpRight size={16} />
+                </span>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Link>
   );
 };
 
