@@ -7,18 +7,18 @@ interface PageHeaderProps {
   showBreadcrumbs?: boolean;
   currentPage?: string;
   backgroundImage?: string;
+  paddingTop?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   description,
-  showBreadcrumbs = false,
-  currentPage,
   backgroundImage = '/assets/header-bg.jpg',
+  paddingTop = 'md:py-52 py-40',
 }) => {
   return (
     <section
-      className="relative py-40 md:py-52  text-white bg-cover bg-center bg-no-repeat"
+      className={`relative  ${paddingTop}  text-white bg-cover bg-center bg-no-repeat`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark overlay for better text visibility */}

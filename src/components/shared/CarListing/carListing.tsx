@@ -1,5 +1,5 @@
 'use client';
-import CarCard from '@/components/shared/CarCard';
+import CarCard from '@/components/sections/CarCard/V2';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';

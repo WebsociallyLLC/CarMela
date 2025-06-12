@@ -65,12 +65,13 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Desktop Top Banner */}
+      <TopInfoHeader />
 
       {/* <TopInfoHeader /> */}
       <nav
         className={`fixed z-50 w-full py-4 md:py-6 px-4 sm:px-6 lg:px-16 transition-all duration-300 ${
           isScrolled || isCarDetailPage ? 'bg-[#050B20]' : 'bg-transparent'
-        } ${!isScrolled && !isCarDetailPage ? 'md:top-0 top-[32px]' : 'md:top-0 top-[32px]'}`}
+        } ${!isScrolled && !isCarDetailPage ? 'md:top-6 top-[40px] ' : 'md:top-6 top-[40px]'}`}
       >
         <div className="max-w-[1440px] mx-auto flex justify-between items-center">
           <Link href="/">

@@ -1,11 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import { Figtree } from 'next/font/google';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { toast } from 'sonner';
 import { motion } from 'framer-motion';
+import MaskedInput from 'react-text-mask';
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -13,11 +14,40 @@ const figtree = Figtree({
   variable: '--font-figtree',
 });
 
+// Phone mask for (XXX) XXX-XXXX format
+export const USPhoneMask = [
+  '(',
+  /[1-9]/,
+  /\d/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+];
+
 // Form validation schema
 const contactFormSchema = yup.object({
   firstName: yup.string().required('First name is required'),
   lastName: yup.string().required('Last name is required'),
-  phone: yup.string().required('Phone number is required'),
+  phone: yup
+    .string()
+    .required('Phone number is required')
+    .test(
+      'is-empty',
+      'Phone Number is empty',
+      (value) => value !== undefined && value.replace(/\D/g, '').trim() !== '',
+    )
+    .matches(
+      /^\(\d{3}\) \d{3}-\d{4}$/,
+      'Phone Number must be in the format (XXX) XXX-XXXX',
+    ),
   email: yup
     .string()
     .email('Invalid email format')
@@ -152,6 +182,7 @@ const ContactUs: React.FC = () => {
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
     reset,
@@ -168,7 +199,7 @@ const ContactUs: React.FC = () => {
 
   const onSubmit = async (formData: any) => {
     setIsSubmitting(true);
-    const email = 'takeoffmotorcars@gmail.com'; // Replace with your recipient email
+    const email = 'takeoffmotorcars@gmail.com';
     const subject = `New Contact from ${formData.firstName} ${formData.lastName}`;
     const html = EmailTemplate(formData);
 
@@ -272,20 +303,30 @@ const ContactUs: React.FC = () => {
             </motion.div>
 
             <motion.div variants={slideUp} className="relative w-full">
-              <input
-                type="text"
-                id="phone"
-                {...register('phone')}
-                className="peer border rounded-[10px] border-gray-300 px-4 pt-6 pb-4 w-full placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#818181]"
-                placeholder="Phone"
-                disabled={isSubmitting}
+              <Controller
+                name="phone"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <div className="relative">
+                    <MaskedInput
+                      {...field}
+                      mask={USPhoneMask}
+                      id="phone"
+                      placeholder=" "
+                      className="peer border rounded-[10px] border-gray-300 px-4 pt-6 pb-4 w-full placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#818181]"
+                      disabled={isSubmitting}
+                      guide={true}
+                    />
+                    <label
+                      htmlFor="phone"
+                      className="absolute left-4 top-2 text-sm text-[#818181] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#818181]"
+                    >
+                      Phone Number
+                    </label>
+                  </div>
+                )}
               />
-              <label
-                htmlFor="phone"
-                className="absolute left-4 top-2 text-sm text-[#818181] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#818181]"
-              >
-                Phone
-              </label>
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-500">
                   {errors.phone.message}
