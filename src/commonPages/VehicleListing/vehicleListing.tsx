@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import CarCard from '@/components/shared/CarCard';
+import CarCard from '@/components/sections/CarCard/V2';
 import PageHeader from '@/components/sections/PageHeader/PageHeaderV1/pageHeader';
 import { CARS_DATA } from '@/utils/data';
 import { useSearchParams } from 'next/navigation';
@@ -105,6 +105,7 @@ const VehicleListing = () => {
         showBreadcrumbs={true}
         currentPage="Our Collection"
         backgroundImage="/assets/list-hero.svg"
+        paddingTop="md:pt-36 md:pb-20 pb-10 pt-32"
       />
       <div className="py-14 px-6 max-w-[1440px] mx-auto">
         {/* FILTER CONTROLS */}

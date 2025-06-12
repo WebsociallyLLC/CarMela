@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck as faCircleCheckRegular } from '@fortawesome/free-regular-svg-icons';
-import CarCard from '@/components/shared/CarCard';
+import CarCard from '@/components/sections/CarCard/V1';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

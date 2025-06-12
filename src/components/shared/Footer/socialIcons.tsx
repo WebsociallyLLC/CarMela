@@ -4,7 +4,11 @@ import React from 'react';
 const SocialIconsRow: React.FC = () => {
   return (
     <div className="flex justify-start space-x-6 text-xl">
-      <Link href="#" className="hover:text-gray-400">
+      <Link
+        href="https://www.facebook.com/people/Takeoff-Motor-Cars/61576338202913/"
+        className="hover:text-gray-400"
+        target="_blank"
+      >
         <i className="fab fa-facebook"></i>
       </Link>
       <Link href="#" className="hover:text-gray-400">

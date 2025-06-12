@@ -12,6 +12,25 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { toast } from 'sonner';
 import PageHeader from '@/components/sections/PageHeader/PageHeaderV1/pageHeader';
 import { motion } from 'framer-motion';
+import MaskedInput from 'react-text-mask';
+
+// Phone mask for (XXX) XXX-XXXX format
+const USPhoneMask = [
+  '(',
+  /[1-9]/,
+  /\d/,
+  /\d/,
+  ')',
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  '-',
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+];
 
 const contactDetails = [
   {
@@ -244,9 +263,15 @@ const ContactUs = () => {
     }
 
     // Phone validation (optional field but if provided, must be valid)
-    if (formData.phone && !/^[\d\s\-+()]{7,15}$/.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
-      valid = false;
+    if (formData.phone) {
+      const phoneDigits = formData.phone.replace(/\D/g, '');
+      if (phoneDigits.length !== 10) {
+        newErrors.phone = 'Phone number must be 10 digits';
+        valid = false;
+      } else if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(formData.phone)) {
+        newErrors.phone = 'Phone number must be in format (XXX) XXX-XXXX';
+        valid = false;
+      }
     }
 
     if (!formData.message.trim()) {
@@ -435,18 +460,19 @@ const ContactUs = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Phone Number (Optional)
                     </label>
-                    <input
-                      type="tel"
+                    <MaskedInput
+                      mask={USPhoneMask}
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       disabled={isSubmitting}
+                      guide={true}
                       className={`w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       } focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200 bg-gray-50 ${
                         isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                       }`}
-                      placeholder="(123) 456-7890"
+                      placeholder="(555) 555-5555"
                     />
                     {errors.phone && (
                       <motion.p
@@ -628,9 +654,10 @@ const ContactUs = () => {
             >
               <div className="rounded-xl overflow-hidden h-[250px] md:h-[400px]">
                 <iframe
-                  title="Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.7060869077067!2d-0.13301792422809613!3d51.50071681882385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c7c7eb9be3%3A0x3918653583725b56!2sRoyal%20Automobile%20Club!5e0!3m2!1sen!2sus!4v1664372054798!5m2!1sen!2sus"
-                  className="w-full h-full border-0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.4127211188606!2d-93.3669109!3d45.3808447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b34145a57f9f0d%3A0xebe4f6af9ec2a313!2sTAKEOFF%20Motor%20Cars!5e0!3m2!1sen!2s!4v1749715833753!5m2!1sen!2s"
+                  width="600"
+                  height="450"
+                  style={{ border: '0' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
