@@ -392,59 +392,53 @@ const ListingDetailPageV2 = () => {
           <div className="md:w-[70%]">
             {/* Car overview section  */}
             <div className="car-overview mb-8 mt-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {car.attributes.map((attribute: any, index: any) => (
                   <div
                     key={index}
-                    className="flex items-center w-[80%] justify-between"
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-white p-4 rounded-lg shadow-sm space-y-2 sm:space-y-0"
                   >
-                    <span>
+                    <div className="flex items-center gap-3">
                       <FontAwesomeIcon
                         icon={attribute.icon}
-                        className="h-5 w-5 mr-2"
+                        className="h-5 w-5 text-gray-600 flex-shrink-0"
                       />
-                      <strong>{attribute.label}:</strong>
+                      <strong className="text-gray-700 min-w-[120px]">
+                        {attribute.label}:
+                      </strong>
+                    </div>
+                    <span className="text-blue-800 font-medium break-words">
+                      {attribute.value}
                     </span>
-                    <span className="text-blue-800">{attribute.value}</span>
                   </div>
                 ))}
               </div>
 
-              <h2 className="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block mt-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block mt-10">
                 Description
               </h2>
-              <p>
-                Quisque imperdiet dignissim enim dictum finibus. Sed
-                consectetutr convallis enim eget laoreet. Aenean vitae nisl
-                mollis, porta risus vel, dapibus lectus. Etiam ac suscipit eros,
-                eget maximus Quisque imperdiet dignissim enim dictum finibus.
-                Sed consectetutr convallis enim eget laoreet. Aenean vitae nisl
-                mollis, porta risus vel, dapibus lectus. Etiam ac suscipit eros,
-                eget maximus Quisque imperdiet dignissim enim dictum finibus.
-                Sed consectetutr convallis enim eget laoreet. Aenean vitae nisl
-                mollis, porta risus vel, dapibus lectus. Etiam ac suscipit eros,
-                eget maximus
-              </p>
+              <p className="text-gray-600 leading-relaxed">{car.description}</p>
             </div>
 
             {/* Feature section  */}
-
-            <div className="features bg-white rounded-lg my-5">
-              <h2 className="text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block">
+            <div className="features bg-white rounded-lg my-5 p-6">
+              <h2 className="text-3xl font-bold mb-8 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block">
                 Features
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Interior */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Interior</h3>
-                  <ul className="list-none space-y-2">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                    Interior
+                  </h3>
+                  <ul className="list-none space-y-3">
                     {car.features.interior.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center">
+                      <li key={index} className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 mr-2"
+                          className="h-4 w-4 text-blue-800 flex-shrink-0"
                         />
-                        <span>{feature}</span>
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -452,15 +446,17 @@ const ListingDetailPageV2 = () => {
 
                 {/* Safety */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Safety</h3>
-                  <ul className="list-none space-y-2">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                    Safety
+                  </h3>
+                  <ul className="list-none space-y-3">
                     {car.features.safety.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center">
+                      <li key={index} className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 mr-2"
+                          className="h-4 w-4 text-blue-800 flex-shrink-0"
                         />
-                        <span>{feature}</span>
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -468,15 +464,17 @@ const ListingDetailPageV2 = () => {
 
                 {/* Exterior */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Exterior</h3>
-                  <ul className="list-none space-y-2">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                    Exterior
+                  </h3>
+                  <ul className="list-none space-y-3">
                     {car.features.exterior.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center">
+                      <li key={index} className="flex items-center gap-2">
                         <FontAwesomeIcon
                           icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 mr-2"
+                          className="h-4 w-4 text-blue-800 flex-shrink-0"
                         />
-                        <span>{feature}</span>
+                        <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -484,18 +482,18 @@ const ListingDetailPageV2 = () => {
 
                 {/* Comfort & Convenience */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
                     Comfort & Convenience
                   </h3>
-                  <ul className="list-none space-y-2">
+                  <ul className="list-none space-y-3">
                     {car.features.comfortAndConvenience.map(
                       (feature: any, index: any) => (
-                        <li key={index} className="flex items-center">
+                        <li key={index} className="flex items-center gap-2">
                           <FontAwesomeIcon
                             icon={faCircleCheckRegular}
-                            className="h-4 w-4 text-blue-800 mr-2"
+                            className="h-4 w-4 text-blue-800 flex-shrink-0"
                           />
-                          <span>{feature}</span>
+                          <span className="text-gray-600">{feature}</span>
                         </li>
                       ),
                     )}
