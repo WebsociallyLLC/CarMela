@@ -164,7 +164,7 @@ const ListingDetailPageV2 = () => {
 
   return (
     <>
-      <div className="listing-detail-page px-4 py-6 md:py-40 max-w-[1440px] mx-auto py-48">
+      <div className="listing-detail-page px-4 md:py-40 max-w-[1440px] mx-auto py-40">
         <div className="md:flex justify-between">
           <div>
             <div className="breadcrumb text-sm text-gray-600 mb-4">

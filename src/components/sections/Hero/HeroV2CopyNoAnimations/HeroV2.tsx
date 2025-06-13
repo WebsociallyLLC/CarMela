@@ -13,7 +13,7 @@ const figtree = Figtree({
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full md:h-screen overflow-hidden h-[1000px]">
+    <section className="relative w-full md:h-screen overflow-hidden h-[1030px]">
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
