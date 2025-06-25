@@ -118,7 +118,7 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
       },
     },
   },
-  'localhost': {
+  localhost: {
     name: 'Takeoff Motors',
     theme: 'takeoffmotorcars',
     fallbackTheme: 'baseTheme',
