@@ -19,11 +19,6 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
-export const metadata: Metadata = {
-  title: 'Dealer site',
-  description: 'Dealership sites',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,8 +32,6 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
-
-        <title>Dealership site</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
