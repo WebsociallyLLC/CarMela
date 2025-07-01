@@ -205,7 +205,7 @@ const ContactUs: React.FC = () => {
 
     try {
       const response = await fetch(
-        'https://stag.api.carzoomo.com/socially/send-email',
+        'https://api.carzoomo.com/socially/send-email',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
