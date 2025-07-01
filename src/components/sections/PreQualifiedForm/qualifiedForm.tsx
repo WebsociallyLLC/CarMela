@@ -226,13 +226,13 @@ export default function PreQualifiedForm() {
 
   const onSubmit = async (data: PreQualifiedFormType) => {
     setIsSubmitting(true);
-    const email = 'tt.talhatariq1@gmail.com';
+    const email = 'takeoffmotorcars@gmail.com';
     const subject = `Pre-Qualification Application from ${data.firstName} ${data.lastName}`;
     const html = PreQualifiedEmailTemplate(data);
 
     try {
       const response = await fetch(
-        'https://stag.api.carzoomo.com/socially/send-email',
+        'https://api.carzoomo.com/socially/send-email',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

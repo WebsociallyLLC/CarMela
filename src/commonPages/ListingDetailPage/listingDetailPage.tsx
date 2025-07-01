@@ -123,7 +123,7 @@ const ListingDetailPage = ({ config, car }: ListingDetailPageProps) => {
         carInfo,
       });
       const res = await fetch(
-        'https://stag.api.carzoomo.com/socially/send-email',
+        'https://api.carzoomo.com/socially/send-email',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

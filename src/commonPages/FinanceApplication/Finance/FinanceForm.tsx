@@ -192,7 +192,7 @@ export function FinanceForm() {
     setLoading(true);
     try {
       const response = await fetch(
-        'https://stag.api.carzoomo.com/socially/send-email',
+        'https://api.carzoomo.com/socially/send-email',
         {
           method: 'POST',
           headers: {
