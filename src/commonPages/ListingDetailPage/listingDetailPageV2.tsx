@@ -133,18 +133,15 @@ const ListingDetailPageV2 = () => {
         carUrl,
         carInfo,
       });
-      const res = await fetch(
-        'https://api.carzoomo.com/socially/send-email',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: 'takeoffmotorcars@gmail.com',
-            subject: `Listing Inquiry: ${car?.name || ''}`,
-            html,
-          }),
-        },
-      );
+      const res = await fetch('https://api.carzoomo.com/socially/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: 'takeoffmotorcars@gmail.com',
+          subject: `Listing Inquiry: ${car?.name || ''}`,
+          html,
+        }),
+      });
       if (!res.ok) throw new Error('Failed to send');
       setFormStatus('success');
       toast.success('Your message has been sent!');

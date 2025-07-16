@@ -16,9 +16,19 @@ const inter = Inter({
 });
 
 const Navbar: React.FC = () => {
-  const [menuItems, setMenuItems] = useState<MenuItem[]>(menuData.menu);
+  type MenuItem =
+    | { name: string; type: 'main'; link: string }
+    | {
+        name: string;
+        type: 'dropdown';
+        children: { name: string; link: string }[];
+      };
+  const [menuItems, setMenuItems] = useState<MenuItem[]>(
+    menuData.menu as MenuItem[],
+  );
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   // Determine if on a car detail page (e.g., /listings/[slug])
@@ -63,10 +73,8 @@ const Navbar: React.FC = () => {
           <Phone size={14} /> Call Now: (763) 373-8434
         </Link>
       </div>
-
       {/* Desktop Top Banner */}
       <TopInfoHeader />
-
       <nav
         className={`fixed z-50 w-full py-4 md:py-6 px-4 sm:px-6 lg:px-16 transition-all duration-300 ${
           isScrolled || isCarDetailPage ? 'bg-[#050B20]' : 'bg-transparent'
@@ -104,10 +112,64 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex space-x-6 text-white w-[90%] justify-end items-center">
             <ul className="flex space-x-6">
               {menuItems.map((item) => (
-                <li key={item.name} className="relative">
-                  <div className="flex items-center">
+                <li
+                  key={item.name}
+                  className="relative group flex items-center"
+                >
+                  {item.type === 'dropdown' ? (
+                    <div className="group inline-block relative">
+                      <button
+                        className={`${inter.className} md:mt-2 mt-0 flex items-center gap-1 px-3 sm:text-base text-[14px] font-[400] transition-colors duration-200 text-white`}
+                        onMouseEnter={() => setOpenDropdown(item.name)}
+                        onMouseLeave={() => setOpenDropdown(null)}
+                        onClick={() =>
+                          setOpenDropdown(
+                            openDropdown === item.name ? null : item.name,
+                          )
+                        }
+                        type="button"
+                      >
+                        {item.name}
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="transition-transform duration-200 ml-1 group-hover:rotate-180"
+                        >
+                          <path
+                            d="M4 6L8 10L12 6"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      {/* Dropdown */}
+                      <div
+                        className={`absolute top-full left-0 w-52 mt-2 bg-white shadow-lg rounded-md z-50 transition-all duration-200 ${openDropdown === item.name ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                        onMouseEnter={() => setOpenDropdown(item.name)}
+                        onMouseLeave={() => setOpenDropdown(null)}
+                      >
+                        <ul className="py-2">
+                          {item.children.map((child) => (
+                            <li key={child.name}>
+                              <Link
+                                href={child.link}
+                                className="block px-4 py-2 text-sm text-[#050B20] hover:text-[#FF0000] hover:bg-gray-100"
+                              >
+                                {child.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : item.link ? (
                     <Link
-                      href={`/${item.name === 'Home' ? '' : item.name.toLowerCase().replace(' ', '-')}`}
+                      href={item.link}
                       className={`${inter.className} hover:text-gray-400 md:mt-2 mt-0 px-3 text-white sm:text-base font-[300] text-[14px] transition-colors duration-200 ${
                         isActive(item.link)
                           ? 'text-[#FF0000] font-semibold'
@@ -116,11 +178,10 @@ const Navbar: React.FC = () => {
                     >
                       {item.name}
                     </Link>
-                  </div>
+                  ) : null}
                 </li>
               ))}
             </ul>
-
             <Link
               href="tel:+17633738434"
               className="flex items-center gap-2 bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium ml-4"
@@ -131,7 +192,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </nav>
-
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
@@ -141,7 +201,6 @@ const Navbar: React.FC = () => {
         }`}
         onClick={toggleMobileMenu}
       />
-
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-[280px] bg-[#050B20] z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
@@ -164,27 +223,71 @@ const Navbar: React.FC = () => {
               <X size={24} />
             </button>
           </div>
-
           <div className="flex-1 overflow-y-auto py-6">
             <ul className="space-y-2 px-4">
-              {menuItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={`/${item.name === 'Home' ? '' : item.name.toLowerCase().replace(' ', '-')}`}
-                    className={`${inter.className} block text-white px-4 py-3 text-base font-[300] rounded-lg hover:bg-gray-800 transition-colors ${
-                      isActive(item.link)
-                        ? 'text-[#FF0000] font-semibold bg-gray-800'
-                        : ''
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              {menuItems.map((item) =>
+                item.type === 'dropdown' ? (
+                  <li key={item.name} className="w-full text-left">
+                    <button
+                      onClick={() =>
+                        setOpenDropdown(
+                          openDropdown === item.name ? null : item.name,
+                        )
+                      }
+                      className={`${inter.className} w-full flex items-center justify-between gap-2 px-4 py-3 text-base font-[300] text-white rounded-lg hover:bg-gray-800 transition-colors`}
+                    >
+                      <span>{item.name}</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`}
+                      >
+                        <path
+                          d="M4 6L8 10L12 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    {openDropdown === item.name && (
+                      <ul className="pl-4">
+                        {item.children.map((child) => (
+                          <li key={child.name}>
+                            <Link
+                              href={child.link}
+                              className="block px-4 py-2 text-sm text-white hover:text-[#FF0000] hover:bg-gray-800 rounded"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {child.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ) : (
+                  <li key={item.name}>
+                    <Link
+                      href={item.link}
+                      className={`${inter.className} block text-white px-4 py-3 text-base font-[300] rounded-lg hover:bg-gray-800 transition-colors ${
+                        isActive(item.link)
+                          ? 'text-[#FF0000] font-semibold bg-gray-800'
+                          : ''
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
-
           <div className="p-4 border-t border-gray-700">
             <Link
               href="tel:+17633738434"

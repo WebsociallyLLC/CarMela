@@ -1,5 +1,6 @@
 import { FinanceFormData } from '@/commonPages/FinanceApplication/Finance/types';
 import { formatMoney, formatPhone, isEmployment, isPerson } from './utils';
+import { PreQualifiedFormType } from '@/components/sections/PreQualifiedForm/schema';
 
 // Listing Inquiry Email Template
 export function ListingInquiryEmailTemplate({
@@ -326,6 +327,125 @@ export function FinanceEmailTemplate(data: FinanceFormData): string {
 
             <div class="email-footer">
               <p>This application was submitted with acknowledgment and consent to the terms and conditions.</p>
+              <p style="margin-top: 10px;">© TakeOff Motors</p>
+              </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+}
+
+export function PreQualifiedEmailTemplate(data: PreQualifiedFormType): string {
+  const fullAddress = data.manual
+    ? `${data.address}, ${data.city}, ${data.state} ${data.zipCode}`
+    : data.address;
+  const timeAtAddress = `${data.yearsAtAddress} years, ${data.monthsAtAddress} months`;
+  const timeAtJob = `${data.yearsAtJob} years, ${data.monthsAtJob} months`;
+
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>New Pre-Qualification Application</title>
+        <style>
+          body {
+            font-family: 'Helvetica Neue', 'Helvetica', Arial, 'Lucida Grande', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+          }
+          .email-container {
+            width: 95%;
+            padding: 20px;
+            background-color: #fafafa;
+          }
+          .email-content {
+            border: 1px solid #eeeeee;
+            background-color: #ffffff;
+            border-radius: 5px;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .email-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1C394F;
+          }
+          .email-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+            border-top: 1px solid #dddddd;
+          }
+          .section {
+            margin-bottom: 30px;
+          }
+          .section-title {
+            color: #1C394F;
+            border-bottom: 2px solid #1C394F;
+            padding-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+          }
+          td {
+            padding: 8px;
+            vertical-align: top;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="email-container">
+          <div class="email-content">
+            <div class="email-header">
+              <h1 style="color: #1C394F; margin-top: 20px;">New Pre-Qualification Application</h1>
+            </div>
+            <div class="section">
+              <div class="section-title">Personal Information</div>
+              <table>
+                <tr><td><strong>Name:</strong></td><td>${data.firstName} ${data.lastName}</td></tr>
+                <tr><td><strong>Email:</strong></td><td>${data.email}</td></tr>
+                <tr><td><strong>Phone Number:</strong></td><td>${data.phoneNumber}</td></tr>
+                <tr><td><strong>Date of Birth:</strong></td><td>${data.dob}</td></tr>
+              </table>
+            </div>
+            <div class="section">
+              <div class="section-title">Residence Information</div>
+              <table>
+                <tr><td><strong>Address:</strong></td><td>${fullAddress}</td></tr>
+                <tr><td><strong>Monthly Rent/Mortgage:</strong></td><td>$${data.monthlyRent}</td></tr>
+                <tr><td><strong>Time at Address:</strong></td><td>${timeAtAddress}</td></tr>
+              </table>
+            </div>
+            <div class="section">
+              <div class="section-title">Employment Information</div>
+              <table>
+                <tr><td><strong>Monthly Gross Income:</strong></td><td>$${data.grossIncome}</td></tr>
+                <tr><td><strong>Time at Job:</strong></td><td>${timeAtJob}</td></tr>
+              </table>
+            </div>
+            <div class="section">
+              <div class="section-title">Down Payment</div>
+              <table>
+                <tr><td><strong>Amount:</strong></td><td>$${data.downPayment}</td></tr>
+              </table>
+            </div>
+            <div class="email-footer">
+              <p>This pre-qualification application was submitted via the website.</p>
               <p style="margin-top: 10px;">© TakeOff Motors</p>
             </div>
           </div>

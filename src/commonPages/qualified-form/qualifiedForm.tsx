@@ -8,12 +8,12 @@ const QualifiedForm = () => {
     <>
       <PageHeader
         backgroundImage="/assets/about-hero.svg"
-        title="QualifiedForm"
-        description="Start Your Journey Toward Approved Financing"
+        title="Get Pre-Approved"
+        description="Begin your journey toward hassle-free financing approval."
         showBreadcrumbs={true}
-        currentPage="Credit"
+        currentPage="Get Pre-Approved"
       />
-      <main className="flex-1 bg-gray-50 mt-10">
+      <main className="flex-1 bg-gray-50">
         <div className="max-w-[1440px] mx-auto px-2 md:px-0 py-8">
           <div className="bg-gray-50">
             <div className="px-4 py-5 sm:p-6">
