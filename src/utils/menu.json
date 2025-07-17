@@ -21,9 +21,12 @@
       "link": "/about"
     },
     {
-      "name": "Credit",
-      "type": "main",
-      "link": "/credit"
+      "name": "Finance",
+      "type": "dropdown",
+      "children": [
+        { "name": "Get Pre-Approved", "link": "/get-pre-approved" },
+        { "name": "Credit Application", "link": "/credit" }
+      ]
     }
   ]
 }

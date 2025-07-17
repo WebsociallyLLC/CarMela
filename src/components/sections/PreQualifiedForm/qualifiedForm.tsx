@@ -4,9 +4,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { preQualifiedSchema, PreQualifiedFormType } from './schema';
 import { InputFieldProps, OptionType, SelectFieldProps } from './types';
-import ContactHighlights from './ contactHighlights';
+import ContactHighlights from './contactHighlights';
 import { MONTHS_OPTIONS, YEARS_OPTIONS } from './constants';
 import { toast } from 'sonner';
+import { PreQualifiedEmailTemplate } from '@/utils/email';
 
 const InputField: React.FC<InputFieldProps> = ({
   type = 'text',
@@ -57,152 +58,6 @@ const SelectField: React.FC<SelectFieldProps> = ({
   </div>
 );
 
-/**
- * Email template for pre-qualified form submissions
- * @param {any} values - Form values
- * @returns {string} - HTML email template
- */
-function PreQualifiedEmailTemplate(values: any): string {
-  const {
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    dob,
-    address,
-    city,
-    state,
-    zipCode,
-    monthlyRent,
-    yearsAtAddress,
-    monthsAtAddress,
-    grossIncome,
-    yearsAtJob,
-    monthsAtJob,
-    downPayment,
-    manual,
-  } = values;
-  const name = `${firstName} ${lastName}`;
-  const fullAddress = manual
-    ? `${address}, ${city}, ${state} ${zipCode}`
-    : address;
-  const timeAtAddress = `${yearsAtAddress} years, ${monthsAtAddress} months`;
-  const timeAtJob = `${yearsAtJob} years, ${monthsAtJob} months`;
-
-  return `
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>New Pre-Qualification Application</title>
-        <style>
-          body {
-            font-family: 'Helvetica Neue', 'Helvetica', Arial, 'Lucida Grande', sans-serif;
-            background-color: #fafafa;
-            margin: 0;
-            padding: 0;
-          }
-          .email-container {
-            width: 95%;
-            height: 100%;
-            padding: 20px;
-            background-color: #fafafa;
-          }
-          .email-content {
-            border: 1px solid #eeeeee;
-            background-color: #ffffff;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-          }
-          .email-header img {
-            max-width: 100px;
-          }
-          .email-header,
-          .email-footer {
-            text-align: center;
-            margin-bottom: 20px;
-          }
-          .email-footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            font-weight: bold;
-            color: #666666;
-            border-top: 1px solid #dddddd;
-          }
-          .email-content h1,
-          .email-content h2 {
-            font-weight: 500;
-            color: #111111;
-          }
-          .email-content h1 {
-            font-size: 24px;
-            margin: 20px 0 30px 0;
-          }
-          .email-content h2 {
-            font-size: 16px;
-            margin: 20px 0;
-            font-weight: 200;
-          }
-          .section {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-          }
-          .section-title {
-            font-weight: bold;
-            color: #F20000;
-            margin-bottom: 10px;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="email-container">
-          <div class="email-content">
-            <div class="email-header">
-              TakeOff Motors - Pre-Qualification Application
-            </div>
-            <h1>New Pre-Qualification Application Received</h1>
-            
-            <div class="section">
-              <div class="section-title">Personal Information</div>
-              <h2>Name: <strong>${name}</strong></h2>
-              <h2>Email: <strong>${email}</strong></h2>
-              <h2>Phone Number: <strong>${phoneNumber}</strong></h2>
-              <h2>Date of Birth: <strong>${dob}</strong></h2>
-            </div>
-
-            <div class="section">
-              <div class="section-title">Residence Information</div>
-              <h2>Address: <strong>${fullAddress}</strong></h2>
-              <h2>Monthly Rent/Mortgage: <strong>$${monthlyRent}</strong></h2>
-              <h2>Time at Address: <strong>${timeAtAddress}</strong></h2>
-            </div>
-
-            <div class="section">
-              <div class="section-title">Employment Information</div>
-              <h2>Monthly Gross Income: <strong>$${grossIncome}</strong></h2>
-              <h2>Time at Job: <strong>${timeAtJob}</strong></h2>
-            </div>
-
-            <div class="section">
-              <div class="section-title">Down Payment</div>
-              <h2>Amount: <strong>$${downPayment}</strong></h2>
-            </div>
-
-            <div class="email-footer">
-              TakeOff Motors
-            </div>
-          </div>
-        </div>
-      </body>
-    </html>
-  `;
-}
-
 export default function PreQualifiedForm() {
   const [showManualAddress, setShowManualAddress] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -226,7 +81,7 @@ export default function PreQualifiedForm() {
 
   const onSubmit = async (data: PreQualifiedFormType) => {
     setIsSubmitting(true);
-    const email = 'takeoffmotorcars@gmail.com';
+    const email = 'proabdulbasit.me@gmail.com';
     const subject = `Pre-Qualification Application from ${data.firstName} ${data.lastName}`;
     const html = PreQualifiedEmailTemplate(data);
 
@@ -252,7 +107,7 @@ export default function PreQualifiedForm() {
     }
   };
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10 px-4">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10">
       <h2 className="text-3xl font-semibold text-gray-900 mb-8">
         Get <span className="text-[#F20000]">Pre</span>-Qualified
       </h2>
