@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
                       </button>
                       {/* Dropdown */}
                       <div
-                        className={`absolute top-full left-0 w-52 mt-2 bg-white shadow-lg rounded-md z-50 transition-all duration-200 ${openDropdown === item.name ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                        className={`absolute top-full left-0 w-52 mt-0 bg-white shadow-lg rounded-md z-50 transition-all duration-200 ${openDropdown === item.name ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                         onMouseEnter={() => setOpenDropdown(item.name)}
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
