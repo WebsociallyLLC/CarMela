@@ -20,6 +20,9 @@
       "type": "main",
       "link": "/about"
     },
+      { "name": "Blogs", 
+      "type": "main", 
+      "link": "/blog" },
     {
       "name": "Finance",
       "type": "dropdown",
