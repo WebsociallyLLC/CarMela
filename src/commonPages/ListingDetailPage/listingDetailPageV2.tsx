@@ -182,7 +182,7 @@ const ListingDetailPageV2 = () => {
                 {!car.price ||
                 car.price.trim() === '' ||
                 car.price.trim() === '$—'
-                  ? 'Your Call'
+                  ? 'Call for price'
                   : car.price}
               </span>
               <button className="flex items-center gap-2">

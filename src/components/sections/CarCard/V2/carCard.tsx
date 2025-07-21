@@ -57,7 +57,7 @@ const CarCard: React.FC<CarCardProps> = ({
 
   const formattedPrice =
     !price || price.trim() === '' || price.trim() === '$—'
-      ? 'Your Call'
+      ? 'Call for price'
       : price;
 
   return (
