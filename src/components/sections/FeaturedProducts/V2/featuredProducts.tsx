@@ -67,7 +67,7 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
     !product.price ||
     product.price.trim() === '' ||
     product.price.trim() === '$—'
-      ? 'Your Call'
+      ? 'Call for price'
       : product.price;
 
   return (

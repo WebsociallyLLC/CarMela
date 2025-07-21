@@ -188,7 +188,7 @@ const CarCard: React.FC<CarCardProps> = ({
               whileHover={{ scale: 1.05 }}
             >
               {!price || price.trim() === '' || price.trim() === '$—'
-                ? 'Your Call'
+                ? 'Call for price'
                 : price}
             </motion.span>
             <motion.div whileHover={{ scale: 1.05, x: 2 }}>
