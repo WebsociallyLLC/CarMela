@@ -38,6 +38,12 @@ const Navbar: React.FC = () => {
     pathname.split('/').length === 3 &&
     pathname !== '/listings';
 
+  const isBlogDetailPage =
+    pathname &&
+    pathname.startsWith('/blog/') &&
+    pathname.split('/').length === 3 &&
+    pathname !== '/blog';
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -77,7 +83,7 @@ const Navbar: React.FC = () => {
       <TopInfoHeader />
       <nav
         className={`fixed z-50 w-full py-4 md:py-6 px-4 sm:px-6 lg:px-16 transition-all duration-300 ${
-          isScrolled || isCarDetailPage ? 'bg-[#050B20]' : 'bg-transparent'
+          isScrolled || isCarDetailPage || isBlogDetailPage ? 'bg-[#050B20]' : 'bg-transparent'
         } ${!isScrolled && !isCarDetailPage ? 'md:top-6 top-[32px] ' : 'md:top-6 top-[32px]'}`}
       >
         <div className="max-w-[1440px] mx-auto flex justify-between items-center">

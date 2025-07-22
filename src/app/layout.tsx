@@ -7,6 +7,7 @@ import { Toaster } from 'sonner';
 // import Navbar from '@/components/Navbar';
 import Footer from '@/components/shared/Footer/footer';
 import Navbar from '@/components/sections/Navbar/NavbarV2';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -37,11 +38,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
         <Toaster position="top-right" />
-        {/* <Providers> */}
-        <Navbar />
-        {children}
-        <Footer />
-        {/* </Providers> */}
+        <LanguageProvider>
+          {/* <Providers> */}
+            <Navbar />
+            {children}
+            <Footer />
+          {/* </Providers> */}
+        </LanguageProvider>
       </body>
     </html>
   );
