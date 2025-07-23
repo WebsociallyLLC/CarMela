@@ -21,6 +21,7 @@ export const CARS_DATA = [
     slug: '2017-bmw-x5-xdrive35i',
     description:
       'Luxury AWD SUV with 3rd Row, Panoramic Roof, Navigation & Premium Package',
+    aiDescription: 'AI generated description for BMW X5 xDrive35i.',
     price: '$17,499',
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -111,6 +112,7 @@ export const CARS_DATA = [
     slug: '2024-toyota-corolla-le',
     description:
       'Reliable fuel-efficient sedan with modern tech and Toyota Safety Sense 3.0',
+    aiDescription: '',
     price: '$19,999', // You can fill this in
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -196,7 +198,8 @@ export const CARS_DATA = [
     model: 'Accord',
     slug: '2006-honda-accord-lx',
     description:
-      'Reliable and fuel-efficient sedan with low mileage and a smooth ride.',
+      '',
+    aiDescription: '',
     price: '$4,000', // Fill this in based on your asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -282,6 +285,7 @@ export const CARS_DATA = [
     slug: '2015-hyundai-sonata-sport',
     description:
       'Midsize sedan with sporty styling, great fuel efficiency, and a comfortable ride.',
+    aiDescription: '',
     price: '$4,000', // Replace with your actual asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -367,6 +371,7 @@ export const CARS_DATA = [
     slug: '2007-acura-mdx',
     description:
       'Luxury AWD SUV with seating for seven, premium features, and advanced safety systems.',
+    aiDescription: '',
     price: '$7,000', // Replace with your actual asking price
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -448,6 +453,7 @@ export const CARS_DATA = [
     slug: '2015-volkswagen-passat-tdi-sel',
     description:
       'Fuel-efficient TDI diesel sedan with premium features and spacious interior.',
+    aiDescription: '',
     price: '$8,900',
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -534,6 +540,7 @@ export const CARS_DATA = [
     slug: '2007-lexus-es-350',
     description:
       'Luxury mid-size sedan with refined comfort, smooth V6 performance, and premium features.',
+    aiDescription: '',
     price: '$7,800',
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -618,6 +625,7 @@ export const CARS_DATA = [
     slug: '2023-chevrolet-malibu-1lt',
     description:
       'Modern mid-size sedan offering a comfortable ride, fuel efficiency, and advanced technology features.',
+    aiDescription: '',
     price: '$17,980',
     imageUrl: '/cars/car0.jpeg',
     images: [
@@ -711,6 +719,7 @@ export const CARS_DATA = [
     slug: '2016-toyota-corolla-sport-special-edition',
     description:
       'Sporty compact sedan offering excellent fuel efficiency, reliability, and special edition styling features.',
+    aiDescription: '',
     price: '$13,499',
     imageUrl: '/cars/16Corolla/Cor1.JPEG',
     images: [
