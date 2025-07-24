@@ -411,10 +411,16 @@ const ListingDetailPageV2 = () => {
                 ))}
               </div>
 
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block mt-10">
-                Description
-              </h2>
-              <p className="text-gray-600 leading-relaxed">{car.description}</p>
+              {(car.aiDescription || car.description) && (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block mt-10">
+                    Description
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    {car.aiDescription || car.description}
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Feature section  */}
