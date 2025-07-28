@@ -424,86 +424,99 @@ const ListingDetailPageV2 = () => {
             </div>
 
             {/* Feature section  */}
-            <div className="features bg-white rounded-lg my-5 p-6">
-              <h2 className="text-3xl font-bold mb-8 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block">
-                Features
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Interior */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                    Interior
-                  </h3>
-                  <ul className="list-none space-y-3">
-                    {car.features.interior.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 flex-shrink-0"
-                        />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Safety */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                    Safety
-                  </h3>
-                  <ul className="list-none space-y-3">
-                    {car.features.safety.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 flex-shrink-0"
-                        />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Exterior */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                    Exterior
-                  </h3>
-                  <ul className="list-none space-y-3">
-                    {car.features.exterior.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <FontAwesomeIcon
-                          icon={faCircleCheckRegular}
-                          className="h-4 w-4 text-blue-800 flex-shrink-0"
-                        />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Comfort & Convenience */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                    Comfort & Convenience
-                  </h3>
-                  <ul className="list-none space-y-3">
-                    {car.features.comfortAndConvenience.map(
-                      (feature: any, index: any) => (
-                        <li key={index} className="flex items-center gap-2">
-                          <FontAwesomeIcon
-                            icon={faCircleCheckRegular}
-                            className="h-4 w-4 text-blue-800 flex-shrink-0"
-                          />
-                          <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ),
+            {car.features && (
+              (car.features.interior?.length > 0 ||
+                car.features.safety?.length > 0 ||
+                car.features.exterior?.length > 0 ||
+                car.features.comfortAndConvenience?.length > 0) ? (
+                <div className="features bg-white rounded-lg my-5 p-6">
+                  <h2 className="text-3xl font-bold mb-8 text-gray-800 border-b-2 border-blue-800 pb-2 inline-block">
+                    Features
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    {/* Interior */}
+                    {car.features.interior && car.features.interior.length > 0 && (
+                      <div>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                          Interior
+                        </h3>
+                        <ul className="list-none space-y-3">
+                          {car.features.interior.map((feature: any, index: any) => (
+                            <li key={index} className="flex items-center gap-2">
+                              <FontAwesomeIcon
+                                icon={faCircleCheckRegular}
+                                className="h-4 w-4 text-blue-800 flex-shrink-0"
+                              />
+                              <span className="text-gray-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
-                  </ul>
+
+                    {/* Safety */}
+                    {car.features.safety && car.features.safety.length > 0 && (
+                      <div>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                          Safety
+                        </h3>
+                        <ul className="list-none space-y-3">
+                          {car.features.safety.map((feature: any, index: any) => (
+                            <li key={index} className="flex items-center gap-2">
+                              <FontAwesomeIcon
+                                icon={faCircleCheckRegular}
+                                className="h-4 w-4 text-blue-800 flex-shrink-0"
+                              />
+                              <span className="text-gray-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Exterior */}
+                    {car.features.exterior && car.features.exterior.length > 0 && (
+                      <div>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                          Exterior
+                        </h3>
+                        <ul className="list-none space-y-3">
+                          {car.features.exterior.map((feature: any, index: any) => (
+                            <li key={index} className="flex items-center gap-2">
+                              <FontAwesomeIcon
+                                icon={faCircleCheckRegular}
+                                className="h-4 w-4 text-blue-800 flex-shrink-0"
+                              />
+                              <span className="text-gray-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Comfort & Convenience */}
+                    {car.features.comfortAndConvenience && car.features.comfortAndConvenience.length > 0 && (
+                      <div>
+                        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                          Comfort & Convenience
+                        </h3>
+                        <ul className="list-none space-y-3">
+                          {car.features.comfortAndConvenience.map((feature: any, index: any) => (
+                            <li key={index} className="flex items-center gap-2">
+                              <FontAwesomeIcon
+                                icon={faCircleCheckRegular}
+                                className="h-4 w-4 text-blue-800 flex-shrink-0"
+                              />
+                              <span className="text-gray-600">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
+              ) : null
+            )}
             {/* Diamention Capicity  */}
           </div>
           {/* Right: Sidebar (Desktop) */}
