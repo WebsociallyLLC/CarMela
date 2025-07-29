@@ -28,7 +28,8 @@
       "type": "dropdown",
       "children": [
         { "name": "Get Pre-Approved", "link": "/get-pre-approved" },
-        { "name": "Credit Application", "link": "/credit" }
+        { "name": "Credit Application", "link": "/credit" },
+        { "name": "Loan Calculator", "link": "/loan-calculator" }
       ]
     }
   ]
