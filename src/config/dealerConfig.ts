@@ -86,8 +86,8 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
       },
     },
   },
-  'www.takeoffmotorcars.com': {
-    name: 'Takeoff Motors',
+  'www.carmela.com': {
+    name: 'Carmela',
     theme: 'takeoffmotorcars',
     fallbackTheme: 'baseTheme',
     dealerId: 'dealer_mtz456',
@@ -101,25 +101,25 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
     },
     seo: {
       home: {
-        title: 'Takeoff Motors | Quality Used Cars in Dublin',
+        title: 'Carmela | Quality Used Cars in Dublin',
         description: 'Your trusted source for quality used cars in Dublin.',
         ogImage: '/logos/mtz-og.jpg',
       },
       about: {
-        title: 'About Takeoff Motors | Your Trusted Car Dealer',
+        title: 'About Carmela | Your Trusted Car Dealer',
         description:
-          "Discover why Takeoff Motors is Dublin's preferred car dealer.",
+          "Discover why Carmela is Dublin's preferred car dealer.",
         ogImage: '/logos/mtz-og.jpg',
       },
       inventory: {
-        title: 'Used Cars Inventory | Takeoff Motors Dublin',
+        title: 'Used Cars Inventory | Carmela Dublin',
         description: 'Explore our extensive inventory of quality used cars.',
         ogImage: '/logos/mtz-og.jpg',
       },
     },
   },
   localhost: {
-    name: 'Takeoff Motors',
+    name: 'Carmela',
     theme: 'takeoffmotorcars',
     fallbackTheme: 'baseTheme',
     dealerId: 'dealer_mtz456',
@@ -133,18 +133,18 @@ export const dealerConfigs: { [key: string]: DealerConfig } = {
     },
     seo: {
       home: {
-        title: 'Takeoff Motors | Quality Used Cars in Dublin',
+        title: 'Carmela | Quality Used Cars in Dublin',
         description: 'Your trusted source for quality used cars in Dublin.',
         ogImage: '/logos/mtz-og.jpg',
       },
       about: {
-        title: 'About Takeoff Motors | Your Trusted Car Dealer',
+        title: 'About Carmela | Your Trusted Car Dealer',
         description:
-          "Discover why Takeoff Motors is Dublin's preferred car dealer.",
+          "Discover why Carmela is Dublin's preferred car dealer.",
         ogImage: '/logos/mtz-og.jpg',
       },
       inventory: {
-        title: 'Used Cars Inventory | Takeoff Motors Dublin',
+        title: 'Used Cars Inventory | Carmela Dublin',
         description: 'Explore our extensive inventory of quality used cars.',
         ogImage: '/logos/mtz-og.jpg',
       },

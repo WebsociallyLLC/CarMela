@@ -194,7 +194,7 @@ function EmailTemplate(values: any): string {
         <div class="email-container">
           <div class="email-content">
             <div class="email-header">
-              TakeOff Motors
+              Carmela
             </div>
             <h1>You have a new message from the Contact Us form:</h1>
             <h2>Name: <strong>${name}</strong></h2>
@@ -202,7 +202,7 @@ function EmailTemplate(values: any): string {
             <h2>Phone: <strong>${phone || 'Not provided'}</strong></h2>
             <h2>Message: <strong>${message}</strong></h2>
             <div class="email-footer">
-             TakeOff Motors
+             Carmela
             </div>
           </div>
         </div>
@@ -293,7 +293,7 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      const email = 'takeoffmotorcars@gmail.com'; // Replace with your recipient email
+      const email = 'carmela@gmail.com'; // Replace with your recipient email
       const subject = `New Contact from ${formData.name}`;
       const html = EmailTemplate(formData);
 
@@ -654,7 +654,7 @@ const ContactUs = () => {
             >
               <div className="rounded-xl overflow-hidden h-[250px] md:h-[400px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.4127211188606!2d-93.3669109!3d45.3808447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b34145a57f9f0d%3A0xebe4f6af9ec2a313!2sTAKEOFF%20Motor%20Cars!5e0!3m2!1sen!2s!4v1749715833753!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d89375.21425769596!2d-93.68824458602039!3d45.5709323795351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x52b39dc02e7381cd%3A0x59cf30ddff0ebb4!2s9626%2018th%20St%20STE%20130%2C%20Princeton%2C%20MN%2055371%2C%20United%20States!3m2!1d45.570961999999994!2d-93.60584399999999!5e0!3m2!1sen!2s!4v1760553778723!5m2!1sen!2s"
                   width="600"
                   height="450"
                   style={{ border: '0' }}

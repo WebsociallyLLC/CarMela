@@ -14,14 +14,14 @@ export async function generateMetadata({ params }: any) {
 
   if (!car) {
     return {
-      title: 'Vehicle Not Found | Takeoff Motorcars',
+      title: 'Vehicle Not Found | Carmela',
       description:
-        'Sorry, this vehicle could not be found at Takeoff Motorcars.',
+        'Sorry, this vehicle could not be found at Carmela.',
     };
   }
 
-  const title = `${car.year ? car.year + ' ' : ''}${car.make} ${car.model} | Takeoff Motorcars`;
-  const description = `Discover details, features, and pricing for this ${car.year ? car.year + ' ' : ''}${car.make} ${car.model} at Takeoff Motorcars. ${car.description || 'Contact us for more information or to schedule a test drive.'}`;
+  const title = `${car.year ? car.year + ' ' : ''}${car.make} ${car.model} | Carmela`;
+  const description = `Discover details, features, and pricing for this ${car.year ? car.year + ' ' : ''}${car.make} ${car.model} at Carmela. ${car.description || 'Contact us for more information or to schedule a test drive.'}`;
 
   return {
     title,
@@ -36,16 +36,16 @@ export async function generateMetadata({ params }: any) {
                 url: car.images[0],
                 width: 1200,
                 height: 630,
-                alt: `${car.make} ${car.model} - Takeoff Motorcars`,
+                alt: `${car.make} ${car.model} - Carmela`,
               },
             ]
           : [],
       type: 'article',
       locale: 'en_US',
-      siteName: 'Takeoff Motorcars',
+      siteName: 'Carmela',
     },
     alternates: {
-      canonical: `https://takeoffmotorcars.com/listings/${slug}`,
+      canonical: `https://carmela.com/listings/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',

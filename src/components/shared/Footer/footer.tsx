@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
               <div className="-ms-14 md:-ms-0">
                 <Link href="/">
                   <Image
-                    src="/assets/motors-logo.svg"
-                    alt="FastCarDeals Logo"
+                    src="/assets/carmela-logo.svg"
+                    alt="Carmela Logo"
                     width={250}
                     height={58}
                     quality={100}
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
         </div>
         <hr className="border-t border-[#374677]" />
         <div className="mt-6 text-sm w-full text-center">
-          <p>© 2025 template.com. All rights reserved.</p>
+          <p>© 2025 Carmela. All rights reserved.</p>
         </div>
       </div>
     </div>

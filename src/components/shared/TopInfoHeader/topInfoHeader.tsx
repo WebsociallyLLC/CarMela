@@ -7,11 +7,11 @@ export default function TopInfoHeader() {
         <div className="flex items-center gap-8">
           <span className="flex items-center gap-2">
             <FaPhoneAlt className="text-base" />
-            (763) 742-6050
+            +1 763-447-6626
           </span>
           <span className="flex items-center gap-2">
             <FaMapMarkerAlt className="text-base" />
-            3950 227th Ave NW STE 14, Saint Francis, MN 55070
+            9626 18th St STE 130, Princeton, MN 55371
           </span>
         </div>
       </div>

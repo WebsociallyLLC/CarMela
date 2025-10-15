@@ -87,7 +87,7 @@ const About: React.FC = () => {
               variants={fadeInRight}
             >
               <p className="text-[#050B20] text-[15px]">
-                At TakeOff Motors, we&apos;re dedicated to providing an
+                At Carmela, we&apos;re dedicated to providing an
                 exceptional car buying experience. For over a decade, we&apos;ve
                 built our reputation on transparency, quality, and customer
                 satisfaction.

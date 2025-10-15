@@ -199,7 +199,7 @@ export function FinanceForm() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            email: 'takeoffmotorcars@gmail.com',
+            email: 'carmela@gmail.com',
             subject: `New Finance Application from ${data.applicant.firstName} ${data.applicant.lastName}`,
             html: FinanceEmailTemplate(data),
           }),
