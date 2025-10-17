@@ -73,10 +73,10 @@ const Navbar: React.FC = () => {
       {/* Mobile Top Banner */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-[#FF0000] py-1.5 px-4 z-[60] flex justify-center items-center">
         <Link
-          href="tel:+17633738434"
+          href="tel:+17634476626"
           className="flex items-center justify-center gap-2 text-white text-sm font-medium"
         >
-          <Phone size={14} /> Call Now: (763) 373-8434
+          <Phone size={14} /> Call Now: +1 763-447-6626
         </Link>
       </div>
       {/* Desktop Top Banner */}
@@ -89,10 +89,10 @@ const Navbar: React.FC = () => {
         <div className="max-w-[1440px] mx-auto flex justify-between items-center">
           <Link href="/">
             <Image
-              src="/assets/motors-logo.svg"
-              alt="FastCarDeals Logo"
-              width={180}
-              height={48}
+              src="/assets/carmela-logo.svg"
+              alt="Carmela Logo"
+              width={160}
+              height={40}
               quality={100}
               priority
             />
@@ -189,7 +189,7 @@ const Navbar: React.FC = () => {
               ))}
             </ul>
             <Link
-              href="tel:+17633738434"
+              href="tel:+17634476626"
               className="flex items-center gap-2 bg-[#FF0000] hover:bg-red-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium ml-4"
             >
               <Phone size={16} />
@@ -216,10 +216,10 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col h-full">
           <div className="flex justify-between items-center pt-12 border-b border-gray-700">
             <Image
-              src="/assets/motors-logo.svg"
-              alt="FastCarDeals Logo"
-              width={140}
-              height={40}
+              src="/assets/carmela-logo.svg"
+              alt="Carmela Logo"
+              width={120}
+              height={35}
               quality={100}
             />
             <button
@@ -296,7 +296,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="p-4 border-t border-gray-700">
             <Link
-              href="tel:+17633738434"
+              href="tel:+17634476626"
               className="flex items-center justify-center gap-2 bg-[#FF0000] hover:bg-red-700 text-white px-4 py-3 rounded-lg transition-colors duration-200 font-medium w-full"
             >
               <Phone size={16} />

@@ -5,7 +5,7 @@ const SocialIconsRow: React.FC = () => {
   return (
     <div className="flex justify-start space-x-6 text-xl">
       <Link
-        href="https://www.facebook.com/people/Takeoff-Motor-Cars/61576338202913/"
+        href="https://www.facebook.com/people/Carmela/61576338202913/"
         className="hover:text-gray-400"
         target="_blank"
       >

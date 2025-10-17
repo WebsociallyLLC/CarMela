@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us | Takeoff Motorcars',
+  title: 'About Us | Carmela',
   description:
-    'Learn more about Takeoff Motorcars, our mission, values, and the team dedicated to providing an exceptional car buying experience. Discover why customers trust us for quality vehicles, transparency, and outstanding service.',
+    'Learn more about Carmela, our mission, values, and the team dedicated to providing an exceptional car buying experience. Discover why customers trust us for quality vehicles, transparency, and outstanding service.',
   keywords: [
-    'Takeoff Motorcars',
+    'Carmela',
     'about us',
     'car dealership',
     'our team',
@@ -22,31 +22,31 @@ export const metadata: Metadata = {
     'reliable cars',
   ],
   alternates: {
-    canonical: 'https://takeoffmotorcars.com/about',
+    canonical: 'https://carmela.com/about',
   },
   openGraph: {
-    title: 'About Us | Takeoff Motorcars',
+    title: 'About Us | Carmela',
     description:
-      'Meet the team and discover the values that drive Takeoff Motorcars. We are committed to transparency, quality, and customer satisfaction in every car buying experience.',
-    url: 'https://takeoffmotorcars.com/about',
-    siteName: 'Takeoff Motorcars',
+      'Meet the team and discover the values that drive Carmela. We are committed to transparency, quality, and customer satisfaction in every car buying experience.',
+    url: 'https://carmela.com/about',
+    siteName: 'Carmela',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/assets/icons/logo.png',
+        url: '/assets/carmela-logo.png',
         width: 512,
         height: 512,
-        alt: 'Takeoff Motorcars Logo',
+        alt: 'Carmela Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | Takeoff Motorcars',
+    title: 'About Us | Carmela',
     description:
-      'Learn about Takeoff Motorcars, our mission, and our commitment to quality and customer satisfaction.',
-    images: ['/assets/icons/logo.png'],
+      'Learn about Carmela, our mission, and our commitment to quality and customer satisfaction.',
+    images: ['/assets/carmela-logo.png'],
   },
 };
 

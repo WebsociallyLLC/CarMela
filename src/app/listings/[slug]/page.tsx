@@ -13,18 +13,18 @@ export async function generateMetadata({
   const car = CARS_DATA.find((c) => c.slug === slug);
   if (!car) {
     return {
-      title: 'Car Not Found | TakeoffMotors',
+      title: 'Car Not Found | Carmela',
       description:
-        'Sorry, this car listing could not be found at TakeoffMotors.',
-      keywords: ['TakeoffMotors', 'car not found', 'car dealer'],
+        'Sorry, this car listing could not be found at Carmela.',
+      keywords: ['Carmela', 'car not found', 'car dealer'],
     };
   }
 
   return {
-    title: `${car.name} for Sale | TakeoffMotors`,
-    description: `${car.year} ${car.make} ${car.model} - ${car.description} Available now at TakeoffMotors. Contact us for pricing, details, and a test drive!`,
+    title: `${car.name} for Sale | Carmela`,
+    description: `${car.year} ${car.make} ${car.model} - ${car.description} Available now at Carmela. Contact us for pricing, details, and a test drive!`,
     keywords: [
-      'TakeoffMotors',
+      'Carmela',
       car.make,
       car.model,
       car.year.toString(),

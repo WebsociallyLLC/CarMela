@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Credit Application | Takeoff Motorcars',
+  title: 'Credit Application | Carmela',
   description:
-    'Apply for financing at Takeoff Motorcars. Our team is here to help you secure the best rates and make your car buying experience smooth and hassle-free. Start your credit application today!',
+    'Apply for financing at Carmela. Our team is here to help you secure the best rates and make your car buying experience smooth and hassle-free. Start your credit application today!',
   keywords: [
-    'Takeoff Motorcars',
+    'Carmela',
     'credit application',
     'car financing',
     'auto loan',
@@ -22,31 +22,31 @@ export const metadata: Metadata = {
     'finance center',
   ],
   alternates: {
-    canonical: 'https://takeoffmotorcars.com/credit',
+    canonical: 'https://carmela.com/credit',
   },
   openGraph: {
-    title: 'Credit Application | Takeoff Motorcars',
+    title: 'Credit Application | Carmela',
     description:
-      'Apply for car financing with Takeoff Motorcars. Get pre-approved and enjoy a seamless car buying experience with our expert team.',
-    url: 'https://takeoffmotorcars.com/credit',
-    siteName: 'Takeoff Motorcars',
+      'Apply for car financing with Carmela. Get pre-approved and enjoy a seamless car buying experience with our expert team.',
+    url: 'https://carmela.com/credit',
+    siteName: 'Carmela',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/assets/icons/logo.png',
+        url: '/assets/carmela-logo.png',
         width: 512,
         height: 512,
-        alt: 'Takeoff Motorcars Logo',
+        alt: 'Carmela Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Credit Application | Takeoff Motorcars',
+    title: 'Credit Application | Carmela',
     description:
-      'Start your credit application with Takeoff Motorcars and let our finance experts help you get the best rates.',
-    images: ['/assets/icons/logo.png'],
+      'Start your credit application with Carmela and let our finance experts help you get the best rates.',
+    images: ['/assets/carmela-logo.png'],
   },
 };
 

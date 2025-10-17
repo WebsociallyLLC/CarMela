@@ -127,7 +127,7 @@ function EmailTemplate(values: any): string {
         <div class="email-container">
           <div class="email-content">
             <div class="email-header">
-              TakeOff Motors
+              Carmela
             </div>
             <h1>You have a new message from the Contact Us form:</h1>
             <h2>Name: <strong>${name}</strong></h2>
@@ -135,7 +135,7 @@ function EmailTemplate(values: any): string {
             <h2>Phone Number: <strong>${phone}</strong></h2>
             <h2>Message: <strong>${message}</strong></h2>
             <div class="email-footer">
-              TakeOff Motors
+              Carmela
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@ const ContactUs: React.FC = () => {
 
   const onSubmit = async (formData: any) => {
     setIsSubmitting(true);
-    const email = 'takeoffmotorcars@gmail.com';
+    const email = 'carmela@gmail.com';
     const subject = `New Contact from ${formData.firstName} ${formData.lastName}`;
     const html = EmailTemplate(formData);
 

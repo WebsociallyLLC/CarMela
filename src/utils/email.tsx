@@ -113,7 +113,7 @@ export function ListingInquiryEmailTemplate({
         <div class="email-container">
           <div class="email-content">
             <div class="email-header">
-              TakeOff Motors
+              Carmela
             </div>
             <h1>You have a new listing inquiry:</h1>
             <h2>Car Name: <strong>${listingName}</strong></h2>
@@ -124,7 +124,7 @@ export function ListingInquiryEmailTemplate({
             <h2>Message: <strong>${message}</strong></h2>
             ${carInfoHtml}
             <div class="email-footer">
-              TakeOff Motors
+              Carmela
             </div>
           </div>
         </div>
@@ -327,7 +327,7 @@ export function FinanceEmailTemplate(data: FinanceFormData): string {
 
             <div class="email-footer">
               <p>This application was submitted with acknowledgment and consent to the terms and conditions.</p>
-              <p style="margin-top: 10px;">© TakeOff Motors</p>
+              <p style="margin-top: 10px;">© Carmela</p>
               </div>
           </div>
         </div>
@@ -446,7 +446,7 @@ export function PreQualifiedEmailTemplate(data: PreQualifiedFormType): string {
             </div>
             <div class="email-footer">
               <p>This pre-qualification application was submitted via the website.</p>
-              <p style="margin-top: 10px;">© TakeOff Motors</p>
+              <p style="margin-top: 10px;">© Carmela</p>
             </div>
           </div>
         </div>

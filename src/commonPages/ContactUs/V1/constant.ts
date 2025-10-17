@@ -1,5 +1,5 @@
 export const contactData = {
-  address: '3950 227th Ave NW, St Francis, MN 55070, United States',
-  email: 'takeoffmotorcars@gmail.com',
-  phone: '(763) 373-8434',
+  address: '9626 18th St STE 130, Princeton, MN 55371, United States',
+  email: 'carmela@gmail.com',
+  phone: '+1 763-447-6626',
 };

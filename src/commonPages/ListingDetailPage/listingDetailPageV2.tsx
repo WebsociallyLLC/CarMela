@@ -137,7 +137,7 @@ const ListingDetailPageV2 = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: 'takeoffmotorcars@gmail.com',
+          email: 'carmela@gmail.com',
           subject: `Listing Inquiry: ${car?.name || ''}`,
           html,
         }),

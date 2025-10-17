@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Get Pre-Approved | Takeoff Motorcars',
+  title: 'Get Pre-Approved | Carmela',
   description:
-    'Get pre-approved for car financing at Takeoff Motorcars. Start your application online and enjoy a seamless car buying experience with our expert team.',
+    'Get pre-approved for car financing at Carmela. Start your application online and enjoy a seamless car buying experience with our expert team.',
   keywords: [
-    'Takeoff Motorcars',
+    'Carmela',
     'get pre-approved',
     'car financing',
     'auto loan',
@@ -22,31 +22,31 @@ export const metadata: Metadata = {
     'finance center',
   ],
   alternates: {
-    canonical: 'https://takeoffmotorcars.com/get-pre-approved',
+    canonical: 'https://carmela.com/get-pre-approved',
   },
   openGraph: {
-    title: 'Get Pre-Approved | Takeoff Motorcars',
+    title: 'Get Pre-Approved | Carmela',
     description:
-      'Get pre-approved for car financing at Takeoff Motorcars. Start your application online and enjoy a seamless car buying experience with our expert team.',
-    url: 'https://takeoffmotorcars.com/get-pre-approved',
-    siteName: 'Takeoff Motorcars',
+      'Get pre-approved for car financing at Carmela. Start your application online and enjoy a seamless car buying experience with our expert team.',
+    url: 'https://carmela.com/get-pre-approved',
+    siteName: 'Carmela',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/assets/icons/logo.png',
+        url: '/assets/carmela-logo.png',
         width: 512,
         height: 512,
-        alt: 'Takeoff Motorcars Logo',
+        alt: 'Carmela Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Get Pre-Approved | Takeoff Motorcars',
+    title: 'Get Pre-Approved | Carmela',
     description:
-      'Get pre-approved for car financing at Takeoff Motorcars. Start your application online and enjoy a seamless car buying experience with our expert team.',
-    images: ['/assets/icons/logo.png'],
+      'Get pre-approved for car financing at Carmela. Start your application online and enjoy a seamless car buying experience with our expert team.',
+    images: ['/assets/carmela-logo.png'],
   },
 };
 

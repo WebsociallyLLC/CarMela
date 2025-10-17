@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'TakeoffMotors Car Dealer | Best Deals on New & Used Cars',
+  title: 'Carmela Car Dealer | Best Deals on New & Used Cars',
   description:
-    'TakeoffMotors - Your trusted dealer for new and used cars. Explore our wide selection, unbeatable prices, and exceptional service. Find your next car with us today!',
+    'Carmela - Your trusted dealer for new and used cars. Explore our wide selection, unbeatable prices, and exceptional service. Find your next car with us today!',
   keywords:
-    'TakeoffMotors, car dealer, new cars, used cars, car dealership, best car deals, certified pre-owned, auto sales, finance, car trade-in',
+    'Carmela, car dealer, new cars, used cars, car dealership, best car deals, certified pre-owned, auto sales, finance, car trade-in',
 };
 
 import React from 'react';

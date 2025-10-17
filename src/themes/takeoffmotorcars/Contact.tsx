@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Takeoff Motorcars',
+  title: 'Contact Us | Carmela',
   description:
-    'Contact Takeoff Motorcars for questions, test drives, or more information about our vehicles and services. Our team is here to help you with all your automotive needs.',
+    'Contact Carmela for questions, test drives, or more information about our vehicles and services. Our team is here to help you with all your automotive needs.',
   keywords: [
-    'Takeoff Motorcars',
+    'Carmela',
     'contact',
     'car dealership',
     'customer service',
@@ -21,31 +21,31 @@ export const metadata: Metadata = {
     'get in touch',
   ],
   alternates: {
-    canonical: 'https://takeoffmotorcars.com/contact',
+    canonical: 'https://carmela.com/contact',
   },
   openGraph: {
-    title: 'Contact Us | Takeoff Motorcars',
+    title: 'Contact Us | Carmela',
     description:
-      'Reach out to Takeoff Motorcars for any questions or to schedule a visit. Our team is ready to assist you with your car buying journey.',
-    url: 'https://takeoffmotorcars.com/contact',
-    siteName: 'Takeoff Motorcars',
+      'Reach out to Carmela for any questions or to schedule a visit. Our team is ready to assist you with your car buying journey.',
+    url: 'https://carmela.com/contact',
+    siteName: 'Carmela',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/assets/icons/logo.png',
+        url: '/assets/carmela-logo.png',
         width: 512,
         height: 512,
-        alt: 'Takeoff Motorcars Logo',
+        alt: 'Carmela Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Takeoff Motorcars',
+    title: 'Contact Us | Carmela',
     description:
-      'Contact Takeoff Motorcars for expert assistance and information about our vehicles and services.',
-    images: ['/assets/icons/logo.png'],
+      'Contact Carmela for expert assistance and information about our vehicles and services.',
+    images: ['/assets/carmela-logo.png'],
   },
 };
 

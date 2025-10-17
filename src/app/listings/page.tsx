@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Vehicle Listings | Takeoff Motorcars',
+  title: 'Vehicle Listings | Carmela',
   description:
-    'Browse the latest vehicle inventory at Takeoff Motorcars. Find quality used cars, SUVs, and luxury vehicles, all inspected and ready for you. Discover your next car today!',
+    'Browse the latest vehicle inventory at Carmela. Find quality used cars, SUVs, and luxury vehicles, all inspected and ready for you. Discover your next car today!',
   keywords: [
-    'Takeoff Motorcars',
+    'Carmela',
     'vehicle listings',
     'used cars',
     'car inventory',
@@ -22,31 +22,31 @@ export const metadata: Metadata = {
     'customer satisfaction',
   ],
   alternates: {
-    canonical: 'https://takeoffmotorcars.com/listings',
+    canonical: 'https://carmela.com/listings',
   },
   openGraph: {
-    title: 'Vehicle Listings | Takeoff Motorcars',
+    title: 'Vehicle Listings | Carmela',
     description:
-      'Explore the full inventory of quality used cars and SUVs at Takeoff Motorcars. Find your next vehicle with confidence.',
-    url: 'https://takeoffmotorcars.com/listings',
-    siteName: 'Takeoff Motorcars',
+      'Explore the full inventory of quality used cars and SUVs at Carmela. Find your next vehicle with confidence.',
+    url: 'https://carmela.com/listings',
+    siteName: 'Carmela',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/assets/icons/logo.png',
+        url: '/assets/carmela-logo.png',
         width: 512,
         height: 512,
-        alt: 'Takeoff Motorcars Logo',
+        alt: 'Carmela Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vehicle Listings | Takeoff Motorcars',
+    title: 'Vehicle Listings | Carmela',
     description:
-      'Browse the latest inventory of used cars and SUVs at Takeoff Motorcars. Quality, reliability, and customer satisfaction guaranteed.',
-    images: ['/assets/icons/logo.png'],
+      'Browse the latest inventory of used cars and SUVs at Carmela. Quality, reliability, and customer satisfaction guaranteed.',
+    images: ['/assets/carmela-logo.png'],
   },
 };
 
