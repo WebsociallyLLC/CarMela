@@ -87,7 +87,7 @@ export default function PreQualifiedForm() {
 
     try {
       const response = await fetch(
-        'https://api.carzoomo.com/socially/send-email',
+        'https://api.carbacked.com/socially/send-email',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

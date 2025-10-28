@@ -133,7 +133,7 @@ const ListingDetailPageV2 = () => {
         carUrl,
         carInfo,
       });
-      const res = await fetch('https://api.carzoomo.com/socially/send-email', {
+      const res = await fetch('https://api.carbacked.com/socially/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
